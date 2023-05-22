@@ -14,7 +14,8 @@
 </div>
 <div class="col-md-6 col-sm-6 col-xs-6 @if(!empty($for_pdf)) width-50 f-left @endif">
 	<p class="blue-heading p-4 width-50">@lang('lang_v1.to'):</p>
-	<p><strong>{{$contact->name}}</strong><br> {!! $contact->contact_address !!} @if(!empty($contact->email)) <br>@lang('business.email'): {{$contact->email}} @endif
+	<p><strong>{{$contact->name}}</strong><br> {!! $contact->contact_address !!} @if(!empty($contact->email)) <br>@lang('business.email'): {{$contact->email}}
+	<br>Status: {{$contact->status}}   @endif
 	<br>@lang('contact.mobile'): {{$contact->mobile}}
 	@if(!empty($contact->tax_number)) <br>@lang('contact.tax_no'): {{$contact->tax_number}} @endif
 </p>

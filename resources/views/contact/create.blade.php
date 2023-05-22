@@ -210,6 +210,25 @@
                   </div>
             </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             <!-- User in create customer & supplier -->
             @if(config('constants.enable_contact_assign') && $type !== 'lead')
                 <div class="col-md-6">
@@ -224,6 +243,36 @@
                       </div>
                 </div>
             @endif
+
+
+
+
+            
+              <!-- User in create leads -->
+              <div class="col-md-6 ">
+                  <div class="form-group">
+                      <label for="">Account Status</label>
+                      <div class="input-group">
+                      <span class="input-group-addon">
+                                  <i class="fa fa-check"></i>
+                              </span>
+
+
+                      <!-- {!! Form::email('email', null, ['class' => 'form-control','placeholder' => __('business.email')]); !!} -->
+
+
+                        <select name="status" id="" class="form-control">
+                            <option value="OnHold">OnHold</option>
+                            <option value="Active">Active</option>
+                            <option value="Deactive">Deactive</option>
+                        </select>
+                      </div>
+                  </div>
+            </div>
+
+
+
+
 
             <div class="clearfix"></div>
         </div>

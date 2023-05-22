@@ -185,6 +185,40 @@
               </div>
           </div>
         </div>
+
+
+
+         <!-- status -->
+
+         <div class="col-md-6 ">
+                  <div class="form-group">
+                      <label for="">Account Status</label>
+                      <div class="input-group">
+                      <span class="input-group-addon">
+                                  <i class="fa fa-check"></i>
+                              </span>
+
+
+                      <!-- {!! Form::email('email', null, ['class' => 'form-control','placeholder' => __('business.email')]); !!} -->
+
+
+                        <select name="status" id="" class="form-control">
+                            <option value="{{$contact->status}}" selected>{{$contact->status}}</option>
+                            <option value="OnHold">OnHold</option>
+                            <option value="Active">Active</option>
+                            <option value="Deactive">Deactive</option>
+                        </select>
+                      </div>
+                  </div>
+            </div>
+
+
+
+
+
+
+
+
         <div class="col-md-4 lead_additional_div">
           <div class="form-group">
               {!! Form::label('crm_life_stage', __('lang_v1.life_stage') . ':' ) !!}

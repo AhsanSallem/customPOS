@@ -118,6 +118,7 @@
                             <th>@lang('business.business_name')</th>
                             <th>@lang('contact.name')</th>
                             <th>@lang('business.email')</th>
+                            <th>Status</th>
                             <th>@lang('contact.tax_no')</th>
                             <th>@lang('contact.pay_term')</th>
                             <th>@lang('account.opening_balance')</th>
