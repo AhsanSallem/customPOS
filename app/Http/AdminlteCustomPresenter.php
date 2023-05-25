@@ -72,19 +72,18 @@ class AdminlteCustomPresenter extends Presenter
     public function getMenuWithDropDownWrapper($item)
     {
         return '<li class="treeview'.$this->getActiveStateOnChild($item, ' active').'" '.$item->getAttributes().'>
-		          <a href="#">
-					'.$item->getIcon().' <span>'.$item->title.'</span>
-                    <span class="pull-right-container">
-                      <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-			      </a>
-			      <ul class="treeview-menu">
-			      	'.$this->getChildMenuItems($item).'
-			      </ul>
-		      	</li>'
-        .PHP_EOL;
-    }
-
+                      <a href="#">
+                        '.$item->getIcon().' <span>'.$item->title.'</span>
+                        <span class="pull-right-container">
+                          <i class="fa fa-plus pull-right"></i>
+                        </span>
+                      </a>
+                      <ul class="treeview-menu">
+                          '.$this->getChildMenuItems($item).'
+                      </ul>
+                      </li>'
+            .PHP_EOL;
+        }
     /**
      * Get multilevel menu wrapper.
      *
@@ -97,7 +96,7 @@ class AdminlteCustomPresenter extends Presenter
 		          <a href="#">
 					'.$item->getIcon().' <span>'.$item->title.'</span>
 			      	<span class="pull-right-container">
-                      <i class="fa fa-angle-left pull-right"></i>
+                      <i class="fa fa-plus pull-right"></i>
                     </span>
 			      </a>
 			      <ul class="treeview-menu">

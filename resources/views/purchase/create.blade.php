@@ -223,7 +223,7 @@
 	@component('components.widget', ['class' => 'box-primary'])
 		<div class="row">
 			<div class="col-sm-2 text-center">
-				<button type="button" class="btn btn-primary btn-flat" data-toggle="modal" data-target="#import_purchase_products_modal">@lang('product.import_products')</button>
+				<button type="button" class="btn-pill btn btn-primary btn-flat" data-toggle="modal" data-target="#import_purchase_products_modal">@lang('product.import_products')</button>
 			</div>
 			<div class="col-sm-8">
 				<div class="form-group">
@@ -237,7 +237,7 @@
 			</div>
 			<div class="col-sm-2">
 				<div class="form-group">
-					<button tabindex="-1" type="button" class="btn btn-link btn-modal"data-href="{{action([\App\Http\Controllers\ProductController::class, 'quickAdd'])}}" 
+					<button tabindex="-1" type="button" class="btn-pill btn btn-primary btn-modal"data-href="{{action([\App\Http\Controllers\ProductController::class, 'quickAdd'])}}" 
             	data-container=".quick_add_product_modal"><i class="fa fa-plus"></i> @lang( 'product.add_new_product' ) </button>
 				</div>
 			</div>

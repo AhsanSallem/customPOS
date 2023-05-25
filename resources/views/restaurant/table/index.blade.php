@@ -22,7 +22,7 @@
         	<h3 class="box-title">@lang( 'restaurant.all_your_tables' )</h3>
             @can('restaurant.create')
             	<div class="box-tools">
-                    <button type="button" class="btn btn-block btn-primary btn-modal" 
+                    <button type="button" class="btn-pill btn btn-block btn-primary btn-modal" 
                     	data-href="{{action([\App\Http\Controllers\Restaurant\TableController::class, 'create'])}}" 
                     	data-container=".tables_modal">
                     	<i class="fa fa-plus"></i> @lang( 'messages.add' )</button>

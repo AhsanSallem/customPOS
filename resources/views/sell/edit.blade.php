@@ -824,8 +824,8 @@
 	<div class="row">
 		<div class="col-md-12 text-center">
 	    	{!! Form::hidden('is_save_and_print', 0, ['id' => 'is_save_and_print']); !!}
-	    	<button type="button" class="btn btn-primary btn-big" id="submit-sell">@lang('messages.update')</button>
-	    	<button type="button" id="save-and-print" class="btn btn-success btn-big">@lang('lang_v1.update_and_print')</button>
+	    	<button type="button" class="btn-pill btn btn-primary btn-big" id="submit-sell">@lang('messages.update')</button>
+	    	<button type="button" id="save-and-print" class="btn-pill btn btn-success btn-big">@lang('lang_v1.update_and_print')</button>
 	    </div>
 	</div>
 	@if(in_array('subscription', $enabled_modules))

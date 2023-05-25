@@ -1397,7 +1397,7 @@ class ReportController extends Controller
                 // })
                 ->editColumn('ref_no', function ($row) {
                     return '<button type="button" data-href="'.action([\App\Http\Controllers\PurchaseController::class, 'show'], [$row->transaction_id])
-                            .'" class="btn btn-link btn-modal" data-container=".view_modal"  >'.$row->ref_no.'</button>';
+                            .'" class="btn-pill btn btn-primary btn-modal" data-container=".view_modal"  >'.$row->ref_no.'</button>';
                 })
                 ->editColumn('stock_left', function ($row) {
                     return '<span data-is_quantity="true" class="display_currency stock_left" data-currency_symbol=false data-orig-value="'.$row->stock_left.'" data-unit="'.$row->unit.'" >'.$row->stock_left.'</span> '.$row->unit;

@@ -18,7 +18,7 @@
         @can('customer.create')
             @slot('tool')
                 <div class="box-tools">
-                    <button type="button" class="btn btn-block btn-primary btn-modal" 
+                    <button type="button" class="btn-pill btn btn-block btn-primary btn-modal" 
                         data-href="{{action([\App\Http\Controllers\CustomerGroupController::class, 'create'])}}" 
                         data-container=".customer_groups_modal">
                         <i class="fa fa-plus"></i> @lang( 'messages.add' )</button>

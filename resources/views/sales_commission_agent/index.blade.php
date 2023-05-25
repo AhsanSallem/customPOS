@@ -15,7 +15,7 @@
         @can('user.create')
             @slot('tool')
                 <div class="box-tools">
-                    <button type="button" class="btn btn-primary btn-modal pull-right"
+                    <button type="button" class="btn-pill btn btn-primary btn-modal pull-right"
                         data-href="{{action([\App\Http\Controllers\SalesCommissionAgentController::class, 'create'])}}" data-container=".commission_agent_modal"><i class="fa fa-plus"></i> @lang( 'messages.add' )</button>
                 </div>
             @endslot

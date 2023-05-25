@@ -15,7 +15,7 @@
     @component('components.widget', ['class' => 'box-primary', 'title' => __('stock_adjustment.all_stock_adjustments')])
         @slot('tool')
             <div class="box-tools">
-                <a class="btn btn-block btn-primary" href="{{action([\App\Http\Controllers\StockAdjustmentController::class, 'create'])}}">
+                <a class="btn-pill btn btn-block btn-primary" href="{{action([\App\Http\Controllers\StockAdjustmentController::class, 'create'])}}">
                 <i class="fa fa-plus"></i> @lang('messages.add')</a>
             </div>
         @endslot

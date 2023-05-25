@@ -14,7 +14,7 @@
     @component('components.widget', ['class' => 'box-primary', 'title' => __( 'lang_v1.all_warranties' )])
         @slot('tool')
             <div class="box-tools">
-                <button type="button" class="btn btn-block btn-primary btn-modal" 
+                <button type="button" class="btn-pill btn btn-block btn-primary btn-modal" 
                     data-href="{{action([\App\Http\Controllers\WarrantyController::class, 'create'])}}" 
                     data-container=".view_modal">
                     <i class="fa fa-plus"></i> @lang( 'messages.add' )</button>

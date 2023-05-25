@@ -89,7 +89,7 @@
 
     <div class="row">
         <div class="col-sm-12">
-            <button class="btn btn-danger pull-right" type="submit">@lang('business.update_settings')</button>
+            <button class="btn-pill btn btn-primary pull-right" type="submit">@lang('business.update_settings')</button>
         </div>
     </div>
 {!! Form::close() !!}

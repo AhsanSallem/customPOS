@@ -215,7 +215,7 @@
 			<div class="clearfix"></div>
 			
 			<div class="col-sm-4 col-sm-offset-8">
-				<button type="button" id="labels_preview" class="btn btn-primary pull-right btn-flat btn-block">@lang( 'barcode.preview' )</button>
+				<button type="button" id="labels_preview" class=" btn-pill btn btn-primary pull-right btn-flat btn-block">@lang( 'barcode.preview' )</button>
 			</div>
 		</div>
 	@endcomponent

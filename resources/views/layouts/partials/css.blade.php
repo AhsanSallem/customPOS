@@ -69,6 +69,9 @@
 	  -webkit-transform: rotate(315deg);
 	  transform: rotate(315deg);
 	}
+	.btn-pill{
+  border-radius: 100vh;
+}
 </style>
 @if(!empty($__system_settings['additional_css']))
     {!! $__system_settings['additional_css'] !!}

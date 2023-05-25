@@ -106,7 +106,7 @@
   </div> <!--box end-->
   @include('expense.recur_expense_form_part')
   <div class="col-sm-12 text-center">
-    <button type="submit" class="btn btn-primary btn-big">@lang('messages.update')</button>
+    <button type="submit" class="btn-pill btn btn-primary btn-big">@lang('messages.update')</button>
   </div>
 
 {!! Form::close() !!}

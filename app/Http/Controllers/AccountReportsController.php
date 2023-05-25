@@ -314,10 +314,10 @@ class AccountReportsController extends Controller
                     ->addColumn('transaction_number', function ($row) {
                         $html = $row->ref_no;
                         if ($row->type == 'sell') {
-                            $html = '<button type="button" class="btn btn-link btn-modal"
+                            $html = '<button type="button" class="btn-pill btn btn-primary btn-modal"
                                     data-href="'.action([\App\Http\Controllers\SellController::class, 'show'], [$row->transaction_id]).'" data-container=".view_modal">'.$row->invoice_no.'</button>';
                         } elseif ($row->type == 'purchase') {
-                            $html = '<button type="button" class="btn btn-link btn-modal"
+                            $html = '<button type="button" class="btn-pill btn btn-primary btn-modal"
                                     data-href="'.action([\App\Http\Controllers\PurchaseController::class, 'show'], [$row->transaction_id]).'" data-container=".view_modal">'.$row->ref_no.'</button>';
                         }
 

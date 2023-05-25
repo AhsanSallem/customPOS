@@ -22,7 +22,7 @@
         		<div class="col-md-8 col-xs-12">
                     <div class="form-group pull-right">
                           <div class="input-group">
-                            <button type="button" class="btn btn-primary" id="dashboard_date_filter">
+                            <button type="button" class="btn btn-primary btn-pill" id="dashboard_date_filter">
                               <span>
                                 <i class="fa fa-calendar"></i> {{ __('messages.filter_by_date') }}
                               </span>

@@ -49,7 +49,7 @@
         @can('purchase_order.create')
             @slot('tool')
                 <div class="box-tools">
-                    <a class="btn btn-block btn-primary" href="{{action([\App\Http\Controllers\PurchaseOrderController::class, 'create'])}}">
+                    <a class="btn-pill btn btn-block btn-primary" href="{{action([\App\Http\Controllers\PurchaseOrderController::class, 'create'])}}">
                     <i class="fa fa-plus"></i> @lang('messages.add')</a>
                 </div>
             @endslot

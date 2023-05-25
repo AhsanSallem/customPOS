@@ -166,7 +166,7 @@ class SellReturnController extends Controller
                     '<span class="display_currency final_total" data-currency_symbol="true" data-orig-value="{{$final_total}}">{{$final_total}}</span>'
                 )
                 ->editColumn('parent_sale', function ($row) {
-                    return '<button type="button" class="btn btn-link btn-modal" data-container=".view_modal" data-href="'.action([\App\Http\Controllers\SellController::class, 'show'], [$row->parent_sale_id]).'">'.$row->parent_sale.'</button>';
+                    return '<button type="button" class="btn-pill btn btn-primary btn-modal" data-container=".view_modal" data-href="'.action([\App\Http\Controllers\SellController::class, 'show'], [$row->parent_sale_id]).'">'.$row->parent_sale.'</button>';
                 })
                 ->editColumn('name', '@if(!empty($supplier_business_name)) {{$supplier_business_name}}, <br> @endif {{$name}}')
                 ->editColumn('transaction_date', '{{@format_datetime($transaction_date)}}')

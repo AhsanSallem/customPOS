@@ -40,7 +40,7 @@
                         </div>
                         <div class="col-sm-4">
                         <br>
-                            <button type="submit" class="btn btn-primary">@lang('messages.submit')</button>
+                            <button type="submit" class="btn-pill btn btn-primary">@lang('messages.submit')</button>
                         </div>
                         </div>
                     </div>
@@ -49,7 +49,7 @@
                 <br><br>
                 <div class="row">
                     <div class="col-sm-4">
-                        <a href="{{ asset('files/import_opening_stock_csv_template.xls') }}" class="btn btn-success" download><i class="fa fa-download"></i> @lang('lang_v1.download_template_file')</a>
+                        <a href="{{ asset('files/import_opening_stock_csv_template.xls') }}" class="btn-pill btn btn-success" download><i class="fa fa-download"></i> @lang('lang_v1.download_template_file')</a>
                     </div>
                 </div>
             @endcomponent

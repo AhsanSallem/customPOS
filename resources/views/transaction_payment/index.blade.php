@@ -22,7 +22,7 @@
         	<h3 class="box-title">@lang( 'brand.all_your_brands' )</h3>
             @can('brand.create')
             	<div class="box-tools">
-                    <button type="button" class="btn btn-block btn-primary btn-modal" 
+                    <button type="button" class="btn-pill btn btn-block btn-primary btn-modal" 
                     	data-href="{{action([\App\Http\Controllers\BrandController::class, 'create'])}}" 
                     	data-container=".brands_modal">
                     	<i class="fa fa-plus"></i> @lang( 'messages.add' )</button>
