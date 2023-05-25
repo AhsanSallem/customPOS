@@ -12,7 +12,11 @@ return [
     */
 
     'supplier' => 'Supplier',
-    'ref_no' => 'Reference No',
+    'ref_no' => 'Sale Reference No',
+    'pur_ref_no' => 'Purchase Reference No',
+    'job_no' => 'Job No',
+    'job_ref' => 'Job Reference',
+    
     'business_location' => 'Business Location',
     'purchases' => 'Purchases',
     'add_payment' => 'Add payment',
@@ -35,7 +39,14 @@ return [
     'payment_status' => 'Payment Status',
     'grand_total' => 'Grand Total',
     'add_purchase' => 'Add Purchase',
-    'purchase_date' => 'Purchase Date',
+
+    'purchase_date' => 'Raised',
+    'required_date' => 'Required',
+    'acknowledge_date' => 'Acknowledged',
+    'duein_date' => 'Due In',
+    'recieved_date' => 'Recieved',
+    'invoice_date' => 'Invoiced',
+    
     'purchase_quantity' => 'Purchase Quantity',
     'unit_cost_before_tax' => 'Unit Cost (Before Tax)',
     'subtotal_before_tax' => 'Subtotal (Before Tax)',

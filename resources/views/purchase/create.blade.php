@@ -50,6 +50,16 @@
 					{!! Form::text('ref_no', null, ['class' => 'form-control']); !!}
 				</div>
 			</div>
+
+			<div class="@if(!empty($default_purchase_status)) col-sm-4 @else col-sm-3 @endif">
+				<div class="form-group">
+					{!! Form::label('pur_ref_no', __('purchase.pur_ref_no').':') !!}
+					<!-- @show_tooltip(__('lang_v1.leave_empty_to_autogenerate')) -->
+					{!! Form::text('pur_ref_no', null, ['class' => 'form-control']); !!}
+				</div>
+			</div>
+
+			
 			<div class="@if(!empty($default_purchase_status)) col-sm-4 @else col-sm-3 @endif">
 				<div class="form-group">
 					{!! Form::label('transaction_date', __('purchase.purchase_date') . ':*') !!}
@@ -61,6 +71,93 @@
 					</div>
 				</div>
 			</div>
+
+
+			<div class="@if(!empty($default_purchase_status)) col-sm-4 @else col-sm-3 @endif">
+				<div class="form-group">
+					{!! Form::label('required_date', __('purchase.required_date') . ':') !!}
+					<div class="input-group">
+						<span class="input-group-addon">
+							<i class="fa fa-calendar"></i>
+						</span>
+						{!! Form::date('required_date', null, ['class' => 'form-control']); !!}
+					</div>
+				</div>
+			</div>
+
+			<div class="@if(!empty($default_purchase_status)) col-sm-4 @else col-sm-3 @endif">
+				<div class="form-group">
+					{!! Form::label('acknowledge_date', __('purchase.acknowledge_date') . ':') !!}
+					<div class="input-group">
+						<span class="input-group-addon">
+							<i class="fa fa-calendar"></i>
+						</span>
+						{!! Form::date('acknowledge_date', null, ['class' => 'form-control']); !!}
+					</div>
+				</div>
+			</div>
+
+
+			<div class="@if(!empty($default_purchase_status)) col-sm-4 @else col-sm-3 @endif">
+				<div class="form-group">
+					{!! Form::label('duein_date', __('purchase.duein_date') . ':') !!}
+					<div class="input-group">
+						<span class="input-group-addon">
+							<i class="fa fa-calendar"></i>
+						</span>
+						{!! Form::date('duein_date', null, ['class' => 'form-control']); !!}
+					</div>
+				</div>
+			</div>
+
+
+			<div class="@if(!empty($default_purchase_status)) col-sm-4 @else col-sm-3 @endif">
+				<div class="form-group">
+					{!! Form::label('recieved_date', __('purchase.recieved_date') . ':') !!}
+					<div class="input-group">
+						<span class="input-group-addon">
+							<i class="fa fa-calendar"></i>
+						</span>
+						{!! Form::date('recieved_date', null, ['class' => 'form-control']); !!}
+					</div>
+				</div>
+			</div>
+
+
+			<div class="@if(!empty($default_purchase_status)) col-sm-4 @else col-sm-3 @endif">
+				<div class="form-group">
+					{!! Form::label('invoice_date', __('purchase.invoice_date') . ':') !!}
+					<div class="input-group">
+						<span class="input-group-addon">
+							<i class="fa fa-calendar"></i>
+						</span>
+						{!! Form::date('invoice_date', null, ['class' => 'form-control']); !!}
+					</div>
+				</div>
+			</div>
+
+
+
+			<div class="@if(!empty($default_purchase_status)) col-sm-4 @else col-sm-3 @endif">
+				<div class="form-group">
+					{!! Form::label('job_no', __('purchase.job_no').':') !!}
+					<!-- @show_tooltip(__('lang_v1.leave_empty_to_autogenerate')) -->
+					{!! Form::text('job_no', null, ['class' => 'form-control']); !!}
+				</div>
+			</div>
+
+
+			<div class="@if(!empty($default_purchase_status)) col-sm-4 @else col-sm-3 @endif">
+				<div class="form-group">
+					{!! Form::label('job_ref', __('purchase.job_ref').':') !!}
+					<!-- @show_tooltip(__('lang_v1.leave_empty_to_autogenerate')) -->
+					{!! Form::text('job_ref', null, ['class' => 'form-control']); !!}
+				</div>
+			</div>
+
+
+
+
 			<div class="col-sm-3 @if(!empty($default_purchase_status)) hide @endif">
 				<div class="form-group">
 					{!! Form::label('status', __('purchase.purchase_status') . ':*') !!} @show_tooltip(__('tooltip.order_status'))
@@ -85,6 +182,8 @@
 				</div>
 			</div>
 
+
+			
 			<!-- Currency Exchange Rate -->
 			<div class="col-sm-3 @if(!$currency_details->purchase_in_diff_currency) hide @endif">
 				<div class="form-group">
@@ -102,6 +201,7 @@
 				</div>
 			</div>
 
+		
 			<div class="col-md-3">
 		          <div class="form-group">
 		            <div class="multi-input">

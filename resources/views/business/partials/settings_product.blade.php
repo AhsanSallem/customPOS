@@ -71,15 +71,15 @@
             </div>
         </div>
 
-        <div class="col-sm-4 enable_sub_category @if($business->enable_category != 1) hide @endif">
-            <div class="form-group">
-                <div class="checkbox">
-                  <label>
-                    {!! Form::checkbox('enable_sub_category', 1, $business->enable_sub_category, [ 'class' => 'input-icheck', 'id' => 'enable_sub_category']); !!} {{ __( 'lang_v1.enable_sub_category' ) }}
-                  </label>
-                </div>
-            </div>
-        </div>
+          <!-- <div class="col-sm-4 enable_sub_category @if($business->enable_category != 1) hide @endif">
+              <div class="form-group">
+                  <div class="checkbox">
+                    <label>
+                      {!! Form::checkbox('enable_sub_category', 1, $business->enable_sub_category, [ 'class' => 'input-icheck', 'id' => 'enable_sub_category']); !!} {{ __( 'lang_v1.enable_sub_category' ) }}
+                    </label>
+                  </div>
+              </div>
+          </div> -->
     </div>
 
     <div class="row">
@@ -116,7 +116,7 @@
             </div>
         </div>
 
-        <div class="clearfix"></div>
+        <!-- <div class="clearfix"></div>
 
         <div class="col-sm-4">
             <div class="form-group">
@@ -181,7 +181,7 @@
                   </label>
                 </div>
             </div>
-        </div>
+        </div> -->
 
     </div>
 </div>

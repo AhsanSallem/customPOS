@@ -43,12 +43,12 @@
                         {!! Form::text('shortcuts[pos][recent_product_quantity]', !empty($shortcuts["pos"]["recent_product_quantity"]) ? $shortcuts["pos"]["recent_product_quantity"] : null, ['class' => 'form-control']); !!}
                     </td>
                 </tr>
-                <tr>
+                <!-- <tr>
                     <td>@lang('lang_v1.weighing_scale'):</td>
                     <td>
                         {!! Form::text('shortcuts[pos][weighing_scale]', !empty($shortcuts["pos"]["weighing_scale"]) ? $shortcuts["pos"]["weighing_scale"] : null, ['class' => 'form-control']); !!}
                     </td>
-                </tr>
+                </tr> -->
             </table>
         </div>
         <div class="col-sm-6">
@@ -223,7 +223,7 @@
             </div>
         </div>
 
-        <div class="col-sm-6">
+        <!-- <div class="col-sm-6">
             <div class="form-group">
                 <div class="checkbox">
                 <br>
@@ -235,9 +235,9 @@
                   @show_tooltip(__('lang_v1.inline_service_staff_tooltip'))
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="clearfix"></div>
-        <div class="col-sm-4">
+        <!-- <div class="col-sm-4">
             <div class="form-group">
                 <div class="checkbox">
                 <br>
@@ -248,7 +248,7 @@
                   </label>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="col-sm-4">
             <div class="form-group">
                 <div class="checkbox">
@@ -263,7 +263,7 @@
             </div>
         </div>
 
-        <div class="col-sm-4">
+        <!-- <div class="col-sm-4">
             <div class="form-group">
                 <div class="checkbox">
                 <br>
@@ -274,7 +274,7 @@
                   </label>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <div class="col-sm-4">
             <div class="form-group">

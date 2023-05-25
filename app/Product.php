@@ -74,8 +74,14 @@ class Product extends Model
      */
     public function unit()
     {
-        return $this->belongsTo(\App\Unit::class);
+        return $this->belongsTo(\App\Unit::class , );
     }
+
+    public function supplier()
+    {
+        return $this->hasOne(\App\Contact::class, 'id','supplier_id');
+    }
+
 
     /**
      * Get the unit associated with the product.

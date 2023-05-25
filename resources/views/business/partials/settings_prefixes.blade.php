@@ -24,7 +24,7 @@
                 {!! Form::text('ref_no_prefixes[purchase_return]', $purchase_return, ['class' => 'form-control']); !!}
             </div>
         </div>
-        <div class="col-sm-4">
+        <!-- <div class="col-sm-4">
             <div class="form-group">
                 @php
                     $purchase_requisition_prefix = !empty($business->ref_no_prefixes['purchase_requisition']) ? $business->ref_no_prefixes['purchase_requisition'] : '';
@@ -32,8 +32,8 @@
                 {!! Form::label('ref_no_prefixes[purchase_requisition]', __('lang_v1.purchase_requisition') . ':') !!}
                 {!! Form::text('ref_no_prefixes[purchase_requisition]', $purchase_requisition_prefix, ['class' => 'form-control']); !!}
             </div>
-        </div>
-        <div class="col-sm-4">
+        </div> -->
+        <!-- <div class="col-sm-4">
             <div class="form-group">
                 @php
                     $purchase_order_prefix = !empty($business->ref_no_prefixes['purchase_order']) ? $business->ref_no_prefixes['purchase_order'] : '';
@@ -41,7 +41,7 @@
                 {!! Form::label('ref_no_prefixes[purchase_order]', __('lang_v1.purchase_order') . ':') !!}
                 {!! Form::text('ref_no_prefixes[purchase_order]', $purchase_order_prefix, ['class' => 'form-control']); !!}
             </div>
-        </div>
+        </div> -->
         <div class="col-sm-4">
             <div class="form-group">
                 @php

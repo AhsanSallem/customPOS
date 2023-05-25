@@ -10,12 +10,21 @@
 	      			<div class="col-sm-4 invoice-col">
 	      				<b>@lang('product.sku'):</b>
 						{{$product->sku }}<br>
-						<b>@lang('product.brand'): </b>
-						{{$product->brand->name ?? '--' }}<br>
+						<b>@lang('product.product_name'): </b>
+						{{$product->name ?? '--' }}<br>
 						<b>@lang('product.unit'): </b>
 						{{$product->unit->short_name ?? '--' }}<br>
-						<b>@lang('product.barcode_type'): </b>
-						{{$product->barcode_type ?? '--' }}
+
+						
+						<b>@lang('product.range'): </b>
+						{{$product->range ?? '--' }}<br>
+
+						<b>@lang('product.supplier_name'): </b>
+						<!-- {{$product->supplier_id ?? '--' }}<br> -->
+						{{$product->supplier->name ?? '--' }}<br>
+
+						<!-- <b>@lang('product.barcode_type'): </b>
+						{{$product->barcode_type ?? '--' }} -->
 						@php 
     						$custom_labels = json_decode(session('business.custom_labels'), true);
 						@endphp

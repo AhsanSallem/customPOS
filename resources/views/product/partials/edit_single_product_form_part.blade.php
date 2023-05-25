@@ -31,16 +31,22 @@
                     <td>
                         <input type="hidden" name="single_variation_id" value="{{$variation->id}}">
 
-                        <div class="col-sm-6">
-                          {!! Form::label('single_dpp', trans('product.exc_of_tax') . ':*') !!}
+                        <div class="col-sm-4">
+                          {!! Form::label('single_dpp_inc_tax2', trans('product.exc_of_tax') . ':*') !!}
 
-                          {!! Form::text('single_dpp', @num_format($variation->default_purchase_price), ['class' => 'form-control input-sm dpp input_number', 'placeholder' => __('product.exc_of_tax'), 'required']); !!}
+                          {!! Form::text('single_dpp_inc_tax2', @num_format($variation->default_purchase_price), ['class' => 'form-control input-sm dpp input_number', 'placeholder' => __('product.exc_of_tax'), 'required']); !!}
                         </div>
 
-                        <div class="col-sm-6">
-                          {!! Form::label('single_dpp_inc_tax', trans('product.inc_of_tax') . ':*') !!}
+                        <div class="col-sm-4">
+                            {!! Form::label('list_discount', trans('product.list_discount') . ':*') !!}
+                            
+                            {!! Form::text('list_discount', @num_format($variation->discount) , ['class' => 'form-control input-sm list_discount input_number', 'placeholder' => __('product.list_discount'), 'required']); !!}
+                        </div>
+
+                        <div class="col-sm-4">
+                          {!! Form::label('single_dpp', trans('product.inc_of_tax') . ':*') !!}
                         
-                          {!! Form::text('single_dpp_inc_tax', @num_format($variation->dpp_inc_tax), ['class' => 'form-control input-sm dpp_inc_tax input_number', 'placeholder' => __('product.inc_of_tax'), 'required']); !!}
+                          {!! Form::text('single_dpp', @num_format($variation->dpp_inc_tax), ['class' => 'form-control input-sm dpp_inc_tax input_number', 'placeholder' => __('product.inc_of_tax'), 'required']); !!}
                         </div>
                     </td>
 
@@ -49,12 +55,27 @@
                         {!! Form::text('profit_percent', @num_format($variation->profit_percent), ['class' => 'form-control input-sm input_number', 'id' => 'profit_percent', 'required']); !!}
                     </td>
 
-                    <td>
-                        <label><span class="dsp_label"></span></label>
-                        {!! Form::text('single_dsp', @num_format($variation->default_sell_price), ['class' => 'form-control input-sm dsp input_number', 'placeholder' => __('product.exc_of_tax'), 'id' => 'single_dsp', 'required']); !!}
 
-                        {!! Form::text('single_dsp_inc_tax', @num_format($variation->sell_price_inc_tax), ['class' => 'form-control input-sm hide input_number', 'placeholder' => __('product.inc_of_tax'), 'id' => 'single_dsp_inc_tax', 'required']); !!}
-                    </td>
+                    
+          <td>
+            
+            <div class="col-sm-6">
+                <label><span class="dsp_label">@lang('product.unit_sell_ex')</span></label>
+                  {!! Form::text('single_dsp_inc_tax', @num_format($variation->sell_price_inc_tax), ['class' => 'form-control input-sm  input_number', 'placeholder' => __('product.unit_sell_ex'), 'id' => 'single_dsp', 'required']); !!}
+
+            </div>
+
+            <div class="col-sm-6">
+                <label><span class="dsp_label">@lang('product.unit_sell_in')</span></label>
+
+                {!! Form::text('single_dsp',  @num_format($variation->default_sell_price), ['class' => 'form-control input-sm  input_number', 'placeholder' => __('product.unit_sell_in'), 'id' => 'single_dsp_inc_tax', 'required']); !!}
+        
+                </div>
+            </td>
+
+
+
+
                     <td>
                         @php 
                             $action = !empty($action) ? $action : '';
@@ -80,3 +101,19 @@
     </table>
     </div>
 </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $(".list_discount").keyup(function(){
+        // alert('da')
+       var value =  $(".dpp").val();
+       var dis =  $(this).val();
+       var get =  (value/100) * dis ;
+       var total_dis = value - get ;
+
+
+       $(".dpp_inc_tax").val(total_dis);
+      });
+    });
+  </script>

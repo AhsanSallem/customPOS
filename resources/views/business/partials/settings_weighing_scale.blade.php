@@ -1,14 +1,11 @@
-<div class="row">
+<!-- <div class="row">
     <div class="col-sm-12">
         <h4>@lang('lang_v1.weighing_scale_setting'):</h4>
         <p>@lang('lang_v1.weighing_scale_setting_help')</p>
         <br/>
     </div>
 
-    <!-- 1st part: Prefix (here any prefix can be entered), user can leave it blank also if prefix not supported by scale.
-	2nd part: Dropdown list from 1 to 9 for Barcode 0
-	3rd part: Dropdown list from 1 to 5 for Quantity 
-	4th part: Dropdown list from 1 to 4 for Quantity decimals. -->
+   ->
 
 
     <div class="col-sm-3">
@@ -40,4 +37,4 @@
             {!! Form::select('weighing_scale_setting[qty_length_decimal]', [1,2,3,4], isset($weighing_scale_setting['qty_length_decimal']) ? $weighing_scale_setting['qty_length_decimal'] : 2, ['class' => 'form-control select2', 'style' => 'width: 100%;', 'id' => 'qty_length_decimal']); !!}
         </div>
     </div>
-</div>
+</div> -->

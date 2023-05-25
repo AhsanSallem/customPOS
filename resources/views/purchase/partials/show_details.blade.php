@@ -14,7 +14,7 @@
     </div>
   </div>
   <div class="row invoice-info">
-    <div class="col-sm-4 invoice-col">
+    <div class="col-sm-3 invoice-col">
       @lang('purchase.supplier'):
       <address>
         {!! $purchase->contact->contact_address !!}
@@ -38,7 +38,7 @@
       @endif
     </div>
 
-    <div class="col-sm-4 invoice-col">
+    <div class="col-sm-3 invoice-col">
       @lang('business.business'):
       <address>
         <strong>{{ $purchase->business->name }}</strong>
@@ -67,9 +67,13 @@
       </address>
     </div>
 
-    <div class="col-sm-4 invoice-col">
+    <div class="col-sm-3 invoice-col">
       <b>@lang('purchase.ref_no'):</b> #{{ $purchase->ref_no }}<br/>
+      <b>@lang('purchase.pur_ref_no'):</b> #{{ $purchase->pur_ref_no }}<br/>
+      <b>@lang('purchase.job_no'):</b> #{{ $purchase->job_no }}<br/>
+      <b>@lang('purchase.job_ref'):</b> #{{ $purchase->job_ref }}<br/>
       <b>@lang('messages.date'):</b> {{ @format_date($purchase->transaction_date) }}<br/>
+      
       @if(!empty($purchase->status))
         <b>@lang('purchase.purchase_status'):</b> @if($purchase->type == 'purchase_order'){{$po_statuses[$purchase->status]['label'] ?? ''}} @else {{ __('lang_v1.' . $purchase->status) }} @endif<br>
       @endif
@@ -135,6 +139,18 @@
           @include('sell.partials.media_table', ['medias' => $medias])
         @endif
       @endif
+    </div>
+
+
+
+    <div class="col-sm-3 invoice-col">
+      <b>@lang('purchase.required_date'):</b> #{{ $purchase->required_date }}<br/>
+      <b>@lang('purchase.acknowledge_date'):</b> #{{ $purchase->acknowledge_date }}<br/>
+      <b>@lang('purchase.duein_date'):</b> #{{ $purchase->duein_date }}<br/>
+      <b>@lang('purchase.recieved_date'):</b> #{{ $purchase->recieved_date }}<br/>
+      <b>@lang('purchase.invoice_date'):</b> #{{ $purchase->invoice_date }}<br/>
+      
+     
     </div>
   </div>
 

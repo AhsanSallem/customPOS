@@ -39,7 +39,7 @@
               </div>
           </div>
         </div>
-        <div class="col-md-4 mt-15">
+        <!-- <div class="col-md-4 mt-15">
             <label class="radio-inline">
                 <input type="radio" name="contact_type_radio" id="inlineRadio1" value="individual">
                 @lang('lang_v1.individual')
@@ -48,7 +48,7 @@
                 <input type="radio" name="contact_type_radio" id="inlineRadio2" value="business">
                 @lang('business.business')
             </label>
-        </div>
+        </div> -->
         <div class="col-md-4">
           <div class="form-group">
               {!! Form::label('contact_id', __('lang_v1.contact_id') . ':') !!}
@@ -64,6 +64,24 @@
             </p>
           </div>
         </div>
+
+        <div class="col-md-4">
+          <div class="form-group">
+              {!! Form::label('order_id', __('lang_v1.order_id') . ':') !!}
+              <div class="input-group">
+                  <span class="input-group-addon">
+                      <i class="fa fa-id-badge"></i>
+                  </span>
+                  <input type="hidden" id="hidden_id" value="{{$contact->id}}">
+                  {!! Form::text('order_id', $contact->order_id, ['class' => 'form-control','placeholder' => __('lang_v1.order_id')]); !!}
+              </div>
+              <!-- <p class="help-block">
+                @lang('lang_v1.leave_empty_to_autogenerate')
+            </p> -->
+          </div>
+        </div>
+
+<!-- 
         <div class="col-md-4 customer_fields">
           <div class="form-group">
               {!! Form::label('customer_group_id', __('lang_v1.customer_group') . ':') !!}
@@ -74,34 +92,25 @@
                   {!! Form::select('customer_group_id', $customer_groups, $contact->customer_group_id, ['class' => 'form-control']); !!}
               </div>
           </div>
-        </div>
+        </div> -->
+
+
         <div class="clearfix customer_fields"></div>
-        <div class="col-md-4 business">
-          <div class="form-group">
-              {!! Form::label('supplier_business_name', __('business.business_name') . ':') !!}
-              <div class="input-group">
-                  <span class="input-group-addon">
-                      <i class="fa fa-briefcase"></i>
-                  </span>
-                  {!! Form::text('supplier_business_name', 
-                  $contact->supplier_business_name, ['class' => 'form-control', 'placeholder' => __('business.business_name')]); !!}
-              </div>
-          </div>
-        </div>
+         
         <div class="clearfix"></div>
-        <div class="col-md-3 individual">
+        <div class="col-md-4 individual">
                 <div class="form-group">
                     {!! Form::label('prefix', __( 'business.prefix' ) . ':') !!}
                     {!! Form::text('prefix', $contact->prefix, ['class' => 'form-control', 'placeholder' => __( 'business.prefix_placeholder' ) ]); !!}
                 </div>
             </div>
-            <div class="col-md-3 individual">
+            <div class="col-md-4 individual">
                 <div class="form-group">
                     {!! Form::label('first_name', __( 'business.first_name' ) . ':*') !!}
                     {!! Form::text('first_name', $contact->first_name, ['class' => 'form-control', 'required', 'placeholder' => __( 'business.first_name' ) ]); !!}
                 </div>
             </div>
-            <div class="col-md-3 individual">
+            <!-- <div class="col-md-3 individual">
                 <div class="form-group">
                     {!! Form::label('middle_name', __( 'lang_v1.middle_name' ) . ':') !!}
                     {!! Form::text('middle_name', $contact->middle_name, ['class' => 'form-control', 'placeholder' => __( 'lang_v1.middle_name' ) ]); !!}
@@ -112,6 +121,19 @@
                     {!! Form::label('last_name', __( 'business.last_name' ) . ':') !!}
                     {!! Form::text('last_name', $contact->last_name, ['class' => 'form-control', 'placeholder' => __( 'business.last_name' ) ]); !!}
                 </div>
+            </div> -->
+
+            <div class="col-md-4 business">
+            <div class="form-group">
+                {!! Form::label('supplier_business_name', __('business.business_name') . ':') !!}
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="fa fa-briefcase"></i>
+                    </span>
+                    {!! Form::text('supplier_business_name', 
+                    $contact->supplier_business_name, ['class' => 'form-control', 'placeholder' => __('business.business_name')]); !!}
+                </div>
+            </div>
             </div>
             <div class="clearfix"></div>
 
@@ -160,7 +182,7 @@
             </div>
         </div>
 
-        <div class="col-sm-4">
+        <!-- <div class="col-sm-4">
             <div class="form-group individual">
                 {!! Form::label('dob', __('lang_v1.dob') . ':') !!}
                 <div class="input-group">
@@ -172,7 +194,7 @@
                 </div>
             </div>
         </div>
-        
+         -->
         <!-- lead additional field -->
         <div class="col-md-4 lead_additional_div">
           <div class="form-group">
@@ -190,7 +212,7 @@
 
          <!-- status -->
 
-         <div class="col-md-6 ">
+         <!-- <div class="col-md-6 ">
                   <div class="form-group">
                       <label for="">Account Status</label>
                       <div class="input-group">
@@ -199,7 +221,6 @@
                               </span>
 
 
-                      <!-- {!! Form::email('email', null, ['class' => 'form-control','placeholder' => __('business.email')]); !!} -->
 
 
                         <select name="status" id="" class="form-control">
@@ -210,7 +231,7 @@
                         </select>
                       </div>
                   </div>
-            </div>
+            </div> -->
 
 
 
@@ -243,7 +264,6 @@
         </div>
 
         @if(config('constants.enable_contact_assign') && $contact->type !== 'lead')
-          <!-- User in create customer & supplier -->
           <div class="col-md-6">
                 <div class="form-group">
                     {!! Form::label('assigned_to_users', __('lang_v1.assigned_to') . ':' ) !!}
@@ -396,7 +416,7 @@
         $contact_custom_field9 = !empty($custom_labels['contact']['custom_field_9']) ? $custom_labels['contact']['custom_field_9'] : __('lang_v1.custom_field', ['number' => 9]);
         $contact_custom_field10 = !empty($custom_labels['contact']['custom_field_10']) ? $custom_labels['contact']['custom_field_10'] : __('lang_v1.custom_field', ['number' => 10]);
       @endphp
-      <div class="col-md-3">
+      <!-- <div class="col-md-3">
         <div class="form-group">
             {!! Form::label('custom_field1', $contact_custom_field1 . ':') !!}
             {!! Form::text('custom_field1', $contact->custom_field1, ['class' => 'form-control', 
@@ -451,23 +471,23 @@
             {!! Form::text('custom_field8', $contact->custom_field8, ['class' => 'form-control', 
                 'placeholder' => $contact_custom_field8]); !!}
         </div>
-      </div>
-      <div class="col-md-3">
+      </div> -->
+      <!-- <div class="col-md-6">
         <div class="form-group">
             {!! Form::label('custom_field9', $contact_custom_field9 . ':') !!}
             {!! Form::text('custom_field9', $contact->custom_field9, ['class' => 'form-control', 
                 'placeholder' => $contact_custom_field9]); !!}
         </div>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-6">
         <div class="form-group">
             {!! Form::label('custom_field10', $contact_custom_field10 . ':') !!}
             {!! Form::text('custom_field10', $contact->custom_field10, ['class' => 'form-control', 
                 'placeholder' => $contact_custom_field10]); !!}
         </div>
-      </div>
-      <div class="clearfix"></div>
-      <div class="col-md-12 shipping_addr_div"><hr></div>
+      </div> -->
+      <!-- <div class="clearfix"></div> -->
+      <!-- <div class="col-md-12 shipping_addr_div"><hr></div> -->
       <div class="col-md-8 col-md-offset-2 shipping_addr_div mb-10" >
           <strong>{{__('lang_v1.shipping_address')}}</strong><br>
           {!! Form::text('shipping_address', $contact->shipping_address, ['class' => 'form-control', 

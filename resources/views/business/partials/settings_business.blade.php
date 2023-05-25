@@ -21,12 +21,12 @@
         </div>
         <div class="col-sm-4">
             <div class="form-group">
-                {!! Form::label('default_profit_percent', __('business.default_profit_percent') . ':*') !!} @show_tooltip(__('tooltip.default_profit_percent'))
+                <!-- {!! Form::label('default_profit_percent', __('business.default_profit_percent') . ':*') !!} @show_tooltip(__('tooltip.default_profit_percent')) -->
                 <div class="input-group">
-                    <span class="input-group-addon">
+                    <!-- <span class="input-group-addon">
                         <i class="fa fa-plus-circle"></i>
-                    </span>
-                    {!! Form::text('default_profit_percent', @num_format($business->default_profit_percent), ['class' => 'form-control input_number']); !!}
+                    </span> -->
+                    {!! Form::hidden('default_profit_percent', @num_format($business->default_profit_percent), ['class' => 'form-control input_number']); !!}
                 </div>
             </div>
         </div>
@@ -67,7 +67,7 @@
                     <p class="help-block"><i> @lang('business.logo_help')</i></p>
             </div>
         </div>
-        <div class="col-md-4">
+        <!-- <div class="col-md-4">
             <div class="form-group">
                 {!! Form::label('fy_start_month', __('business.fy_start_month') . ':') !!} @show_tooltip(__('tooltip.fy_start_month'))
                 <div class="input-group">
@@ -77,7 +77,7 @@
                     {!! Form::select('fy_start_month', $months, $business->fy_start_month, ['class' => 'form-control select2', 'required']); !!}
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="col-sm-4">
             <div class="form-group">
                 {!! Form::label('accounting_method', __('business.accounting_method') . ':*') !!}

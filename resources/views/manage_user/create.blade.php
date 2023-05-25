@@ -131,45 +131,6 @@
     @endcomponent
   </div>
 
-  <div class="col-md-12">
-    @component('components.widget', ['title' => __('sale.sells')])
-      <div class="col-md-4">
-        <div class="form-group">
-          {!! Form::label('cmmsn_percent', __( 'lang_v1.cmmsn_percent' ) . ':') !!} @show_tooltip(__('lang_v1.commsn_percent_help'))
-            {!! Form::text('cmmsn_percent', null, ['class' => 'form-control input_number', 'placeholder' => __( 'lang_v1.cmmsn_percent' ) ]); !!}
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="form-group">
-          {!! Form::label('max_sales_discount_percent', __( 'lang_v1.max_sales_discount_percent' ) . ':') !!} @show_tooltip(__('lang_v1.max_sales_discount_percent_help'))
-            {!! Form::text('max_sales_discount_percent', null, ['class' => 'form-control input_number', 'placeholder' => __( 'lang_v1.max_sales_discount_percent' ) ]); !!}
-        </div>
-      </div>
-      <div class="clearfix"></div>
-      
-      <div class="col-md-4">
-        <div class="form-group">
-            <div class="checkbox">
-            <br/>
-              <label>
-                {!! Form::checkbox('selected_contacts', 1, false, 
-                [ 'class' => 'input-icheck', 'id' => 'selected_contacts']); !!} {{ __( 'lang_v1.allow_selected_contacts' ) }}
-              </label>
-              @show_tooltip(__('lang_v1.allow_selected_contacts_tooltip'))
-            </div>
-        </div>
-      </div>
-      <div class="col-sm-4 hide selected_contacts_div">
-          <div class="form-group">
-              {!! Form::label('user_allowed_contacts', __('lang_v1.selected_contacts') . ':') !!}
-              <div class="form-group">
-                  {!! Form::select('selected_contact_ids[]', [], null, ['class' => 'form-control select2', 'multiple', 'style' => 'width: 100%;', 'id' => 'user_allowed_contacts' ]); !!}
-              </div>
-          </div>
-      </div>
-
-    @endcomponent
-  </div>
 
   </div>
     @include('user.edit_profile_form_part')
