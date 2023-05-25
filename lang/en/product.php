@@ -11,8 +11,13 @@ return [
     |
     */
 
-    'exc_of_tax' => 'Exc. tax',
-    'inc_of_tax' => 'Inc. tax',
+    'exc_of_tax' => 'Unit list Ex.',
+
+    'unit_sell_ex' => 'Unit Sell Ex.',
+    'unit_sell_in' => 'Unit Sell In.',
+
+    'list_discount' => 'List Disc %',
+    'inc_of_tax' => 'Unit Cost Ex.',
     'profit_percent' => 'x Margin(%)',
     'add_new_product' => 'Add new product',
     'add_product_for_labels' => 'Add products to generate Labels',
@@ -20,11 +25,15 @@ return [
     'category' => 'Category',
     'sub_category' => 'Sub category',
     'unit' => 'Unit',
-    'brand' => 'Brand',
+    'brand' => 'Group',
     'tax' => 'Tax',
-    'sku' => 'SKU',
+    'sku' => 'Product Id',
+    'supplier_name' => 'Supplier Name',
+    'range' => 'Range',
+
+    
     'alert_quantity' => 'Alert quantity',
-    'product_name' => 'Product Name',
+    'product_name' => 'Own Product',
     'auto_generate' => 'Auto generate',
     'manage_stock' => 'Manage Stock?',
     'enable_stock_help' => 'Enable stock management at product level',

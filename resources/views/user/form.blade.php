@@ -51,7 +51,7 @@
     {!! Form::label('social_media_2', __( 'lang_v1.social_media', ['number' => 2] ) . ':') !!}
     {!! Form::text('social_media_2', !empty($user->social_media_2) ? $user->social_media_2 : null, ['class' => 'form-control', 'placeholder' => __( 'lang_v1.social_media', ['number' => 2] ) ]); !!}
 </div>
-<div class="form-group col-md-3">
+<!-- <div class="form-group col-md-3">
     {!! Form::label('custom_field_1', $user_custom_field1 . ':') !!}
     {!! Form::text('custom_field_1', !empty($user->custom_field_1) ? $user->custom_field_1 : null, ['class' => 'form-control', 'placeholder' => $user_custom_field1 ]); !!}
 </div>
@@ -66,7 +66,7 @@
 <div class="form-group col-md-3">
     {!! Form::label('custom_field_4', $user_custom_field4 . ':') !!}
     {!! Form::text('custom_field_4', !empty($user->custom_field_4) ? $user->custom_field_4 : null, ['class' => 'form-control', 'placeholder' => $user_custom_field4 ]); !!}
-</div>
+</div> -->
 <div class="form-group col-md-3">
     {!! Form::label('guardian_name', __( 'lang_v1.guardian_name') . ':') !!}
     {!! Form::text('guardian_name', !empty($user->guardian_name) ? $user->guardian_name : null, ['class' => 'form-control', 'placeholder' => __( 'lang_v1.guardian_name' ) ]); !!}

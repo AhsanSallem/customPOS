@@ -37,7 +37,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 mt-15">
+            <!-- <div class="col-md-4 mt-15">
                 <label class="radio-inline">
                     <input type="radio" name="contact_type_radio" id="inlineRadio1" value="individual">
                     @lang('lang_v1.individual')
@@ -46,7 +46,7 @@
                     <input type="radio" name="contact_type_radio" id="inlineRadio2" value="business">
                     @lang('business.business')
                 </label>
-            </div>
+            </div> -->
             <div class="col-md-4">
                 <div class="form-group">
                     {!! Form::label('contact_id', __('lang_v1.contact_id') . ':') !!}
@@ -61,6 +61,26 @@
                     </p>
                 </div>
             </div>
+
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    {!! Form::label('order_id', __('lang_v1.order_id') . ':') !!}
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="fa fa-id-badge"></i>
+                        </span>
+                        {!! Form::text('order_id', null, ['class' => 'form-control','placeholder' => __('lang_v1.order_id')]); !!}
+                    </div>
+                    <!-- <p class="help-block">
+                        @lang('lang_v1.leave_empty_to_autogenerate')
+                    </p> -->
+                </div>
+            </div>
+
+
+
+
             <div class="col-md-4 customer_fields">
                 <div class="form-group">
                   {!! Form::label('customer_group_id', __('lang_v1.customer_group') . ':') !!}
@@ -73,7 +93,24 @@
                 </div>
             </div>
             <div class="clearfix customer_fields"></div>
-            <div class="col-md-4 business" style="display: none;">
+   
+            <div class="clearfix"></div>
+
+            <div class="col-md-4 individual" >
+                <div class="form-group">
+                    {!! Form::label('prefix', __( 'business.prefix' ) . ':') !!}
+                    {!! Form::text('prefix', null, ['class' => 'form-control', 'placeholder' => __( 'business.prefix_placeholder' ) ]); !!}
+                </div>
+            </div>
+            <div class="col-md-4 individual" >
+                <div class="form-group">
+                    {!! Form::label('first_name', __( 'business.first_name' ) . ':*') !!}
+                    {!! Form::text('first_name', null, ['class' => 'form-control', 'required', 'placeholder' => __( 'business.first_name' ) ]); !!}
+                </div>
+            </div>
+
+
+            <div class="col-md-4 business" >
                 <div class="form-group">
                     {!! Form::label('supplier_business_name', __('business.business_name') . ':') !!}
                     <div class="input-group">
@@ -85,32 +122,18 @@
                 </div>
             </div>
 
-            <div class="clearfix"></div>
-
-            <div class="col-md-3 individual" style="display: none;">
-                <div class="form-group">
-                    {!! Form::label('prefix', __( 'business.prefix' ) . ':') !!}
-                    {!! Form::text('prefix', null, ['class' => 'form-control', 'placeholder' => __( 'business.prefix_placeholder' ) ]); !!}
-                </div>
-            </div>
-            <div class="col-md-3 individual" style="display: none;">
-                <div class="form-group">
-                    {!! Form::label('first_name', __( 'business.first_name' ) . ':*') !!}
-                    {!! Form::text('first_name', null, ['class' => 'form-control', 'required', 'placeholder' => __( 'business.first_name' ) ]); !!}
-                </div>
-            </div>
-            <div class="col-md-3 individual" style="display: none;">
+            <!-- <div class="col-md-3 individual" >
                 <div class="form-group">
                     {!! Form::label('middle_name', __( 'lang_v1.middle_name' ) . ':') !!}
                     {!! Form::text('middle_name', null, ['class' => 'form-control', 'placeholder' => __( 'lang_v1.middle_name' ) ]); !!}
                 </div>
             </div>
-            <div class="col-md-3 individual" style="display: none;">
+            <div class="col-md-3 individual" >
                 <div class="form-group">
                     {!! Form::label('last_name', __( 'business.last_name' ) . ':') !!}
                     {!! Form::text('last_name', null, ['class' => 'form-control', 'placeholder' => __( 'business.last_name' ) ]); !!}
                 </div>
-            </div>
+            </div> -->
             <div class="clearfix"></div>
         
             <div class="col-md-3">
@@ -159,7 +182,7 @@
                 </div>
             </div>
             <div class="clearfix"></div>
-            <div class="col-sm-4 individual" style="display: none;">
+            <!-- <div class="col-sm-4 individual" >
                 <div class="form-group">
                     {!! Form::label('dob', __('lang_v1.dob') . ':') !!}
                     <div class="input-group">
@@ -170,7 +193,7 @@
                         {!! Form::text('dob', null, ['class' => 'form-control dob-date-picker','placeholder' => __('lang_v1.dob'), 'readonly']); !!}
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <!-- lead additional field -->
             <div class="col-md-4 lead_additional_div">
@@ -249,7 +272,7 @@
 
             
               <!-- User in create leads -->
-              <div class="col-md-6 ">
+              <!-- <div class="col-md-6 ">
                   <div class="form-group">
                       <label for="">Account Status</label>
                       <div class="input-group">
@@ -258,7 +281,6 @@
                               </span>
 
 
-                      <!-- {!! Form::email('email', null, ['class' => 'form-control','placeholder' => __('business.email')]); !!} -->
 
 
                         <select name="status" id="" class="form-control">
@@ -268,7 +290,7 @@
                         </select>
                       </div>
                   </div>
-            </div>
+            </div> -->
 
 
 
@@ -402,9 +424,9 @@
           </div>
 
           <div class="clearfix"></div>
-          <div class="col-md-12">
+          <!-- <div class="col-md-12">
             <hr/>
-          </div>
+          </div> -->
           @php
             $custom_labels = json_decode(session('business.custom_labels'), true);
             $contact_custom_field1 = !empty($custom_labels['contact']['custom_field_1']) ? $custom_labels['contact']['custom_field_1'] : __('lang_v1.contact_custom_field1');
@@ -418,7 +440,7 @@
             $contact_custom_field9 = !empty($custom_labels['contact']['custom_field_9']) ? $custom_labels['contact']['custom_field_9'] : __('lang_v1.custom_field', ['number' => 9]);
             $contact_custom_field10 = !empty($custom_labels['contact']['custom_field_10']) ? $custom_labels['contact']['custom_field_10'] : __('lang_v1.custom_field', ['number' => 10]);
           @endphp
-          <div class="col-md-3">
+          <!-- <div class="col-md-3">
             <div class="form-group">
                 {!! Form::label('custom_field1', $contact_custom_field1 . ':') !!}
                 {!! Form::text('custom_field1', null, ['class' => 'form-control', 
@@ -473,21 +495,21 @@
                 {!! Form::text('custom_field8', null, ['class' => 'form-control', 
                     'placeholder' => $contact_custom_field8]); !!}
             </div>
-          </div>
-          <div class="col-md-3">
+          </div> -->
+          <!-- <div class="col-md-6">
             <div class="form-group">
                 {!! Form::label('custom_field9', $contact_custom_field9 . ':') !!}
                 {!! Form::text('custom_field9', null, ['class' => 'form-control', 
                     'placeholder' => $contact_custom_field9]); !!}
-            </div>
-          </div>
-          <div class="col-md-3">
+            </div> -->
+          <!-- </div>
+          <div class="col-md-6">
             <div class="form-group">
                 {!! Form::label('custom_field10', $contact_custom_field10 . ':') !!}
                 {!! Form::text('custom_field10', null, ['class' => 'form-control', 
                     'placeholder' => $contact_custom_field10]); !!}
             </div>
-          </div>
+          </div> -->
           <div class="col-md-12 shipping_addr_div"><hr></div>
           <div class="col-md-8 col-md-offset-2 shipping_addr_div mb-10" >
               <strong>{{__('lang_v1.shipping_address')}}</strong><br>
@@ -578,7 +600,7 @@
                     $i = 1;
                 @endphp
                 @for($i; $i <= 6 ; $i++)
-                    <div class="col-md-4 export_div" style="display: none;">
+                    <div class="col-md-4 export_div" >
                         <div class="form-group">
                             {!! Form::label('export_custom_field_'.$i, __('lang_v1.export_custom_field'.$i).':' ) !!}
                             {!! Form::text('export_custom_field_'.$i, null, ['class' => 'form-control','placeholder' => __('lang_v1.export_custom_field'.$i)]); !!}

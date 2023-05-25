@@ -47,7 +47,7 @@
         <div class="col-sm-4">
             <div class="form-group">
                 {!! Form::label('item_addition_method', __('lang_v1.sales_item_addition_method') . ':') !!}
-                {!! Form::select('item_addition_method', [ 0 => __('lang_v1.add_item_in_new_row'), 1 =>  __('lang_v1.increase_item_qty')], $business->item_addition_method, ['class' => 'form-control select2', 'style' => 'width: 100%;']); !!}
+                {!! Form::select('item_addition_method', [ 0 => __('lang_v1.add_item_in_new_row')], $business->item_addition_method, ['class' => 'form-control select2', 'style' => 'width: 100%;']); !!}
             </div>
         </div>
         <div class="clearfix"></div>
@@ -65,7 +65,7 @@
             </div>
         </div>
 
-        <div class="col-sm-4">
+        <!-- <div class="col-sm-4">
             <div class="form-group">
                 <div class="checkbox">
                 <br>
@@ -90,8 +90,8 @@
                   @show_tooltip(__('lang_v1.allow_overselling_help'))
                 </div>
             </div>
-        </div>
-        <div class="clearfix"></div>
+        </div> -->
+        <!-- <div class="clearfix"></div>
         <div class="col-sm-4">
             <div class="form-group">
                 <div class="checkbox">
@@ -101,8 +101,8 @@
                   @show_tooltip(__('lang_v1.sales_order_help_text'))
                 </div>
             </div>
-        </div>
-        <div class="col-sm-4">
+        </div> -->
+        <!-- <div class="col-sm-4">
             <div class="form-group">
                 <div class="checkbox">
                     <label>
@@ -110,11 +110,11 @@
                     </label>
                 </div>
             </div>
-        </div>
+        </div> -->
 
     </div>
     <hr>
-    <div class="row">
+    <!-- <div class="row">
         <div class="col-md-12"><h4>@lang('lang_v1.commission_agent'):</h4></div>
         <div class="col-sm-4">
             <div class="form-group">
@@ -147,9 +147,9 @@
                 </div>
             </div>
         </div>
-    </div>
-    <hr>
-    <div class="row">
+    </div> -->
+    <!-- <hr> -->
+    <!-- <div class="row">
         <div class="col-md-12"><h4>@lang('lang_v1.payment_link') @show_tooltip(__('lang_v1.payment_link_help_text')):</h4></div>
         <div class="col-sm-4">
             <div class="form-group">
@@ -191,5 +191,5 @@
                 {!! Form::text('pos_settings[stripe_secret_key]', $pos_settings['stripe_secret_key'] ?? '', ['class' => 'form-control', 'id' => 'stripe_secret_key']); !!}
             </div>
         </div>
-    </div>
+    </div> -->
 </div>

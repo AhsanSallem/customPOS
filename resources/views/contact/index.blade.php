@@ -118,7 +118,7 @@
                             <th>@lang('business.business_name')</th>
                             <th>@lang('contact.name')</th>
                             <th>@lang('business.email')</th>
-                            <th>Status</th>
+                            <!-- <th>Status</th> -->
                             <th>@lang('contact.tax_no')</th>
                             <th>@lang('contact.pay_term')</th>
                             <th>@lang('account.opening_balance')</th>
@@ -150,7 +150,7 @@
                         @php
                             $custom_labels = json_decode(session('business.custom_labels'), true);
                         @endphp
-                        <th>
+                        <!-- <th>
                             {{ $custom_labels['contact']['custom_field_1'] ?? __('lang_v1.contact_custom_field1') }}
                         </th>
                         <th>
@@ -173,13 +173,13 @@
                         </th>
                         <th>
                             {{ $custom_labels['contact']['custom_field_8'] ?? __('lang_v1.custom_field', ['number' => 8]) }}
-                        </th>
-                        <th>
+                        </th> -->
+                        <!-- <th>
                             {{ $custom_labels['contact']['custom_field_9'] ?? __('lang_v1.custom_field', ['number' => 9]) }}
                         </th>
                         <th>
                             {{ $custom_labels['contact']['custom_field_10'] ?? __('lang_v1.custom_field', ['number' => 10]) }}
-                        </th>
+                        </th> -->
                     </tr>
                 </thead>
                 <tfoot>
@@ -206,16 +206,16 @@
                         </td>
                         <td class="footer_contact_due"></td>
                         <td class="footer_contact_return_due"></td>
+                        <!-- <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td></td> -->
+                        <!-- <td></td>
+                        <td></td> -->
                     </tr>
                 </tfoot>
             </table>

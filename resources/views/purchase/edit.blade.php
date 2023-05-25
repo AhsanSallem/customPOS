@@ -60,6 +60,14 @@
                 {!! Form::text('ref_no', $purchase->ref_no, ['class' => 'form-control', 'required']); !!}
               </div>
             </div>
+
+
+            <div class="@if(!empty($default_purchase_status)) col-sm-4 @else col-sm-3 @endif">
+              <div class="form-group">
+                {!! Form::label('pur_ref_no', __('purchase.pur_ref_no') ) !!}
+                {!! Form::text('pur_ref_no', $purchase->pur_ref_no, ['class' => 'form-control', 'required']); !!}
+              </div>
+            </div>
             
             <div class="@if(!empty($default_purchase_status)) col-sm-4 @else col-sm-3 @endif">
               <div class="form-group">
@@ -72,6 +80,65 @@
                 </div>
               </div>
             </div>
+
+            <div class="@if(!empty($default_purchase_status)) col-sm-4 @else col-sm-3 @endif">
+              <div class="form-group">
+                {!! Form::label('required_date', __('purchase.required_date') ) !!}
+                
+                {!! Form::date('required_date', $purchase->required_date, ['class' => 'form-control', 'required']); !!}
+              </div>
+            </div>
+
+            <div class="@if(!empty($default_purchase_status)) col-sm-4 @else col-sm-3 @endif">
+              <div class="form-group">
+                {!! Form::label('acknowledge_date', __('purchase.acknowledge_date') ) !!}
+                
+                {!! Form::date('acknowledge_date', $purchase->acknowledge_date, ['class' => 'form-control', 'required']); !!}
+              </div>
+            </div>
+
+            <div class="@if(!empty($default_purchase_status)) col-sm-4 @else col-sm-3 @endif">
+              <div class="form-group">
+                {!! Form::label('duein_date', __('purchase.duein_date') ) !!}
+                
+                {!! Form::date('duein_date', $purchase->duein_date, ['class' => 'form-control', 'required']); !!}
+              </div>
+            </div>
+
+            <div class="@if(!empty($default_purchase_status)) col-sm-4 @else col-sm-3 @endif">
+              <div class="form-group">
+                {!! Form::label('recieved_date', __('purchase.recieved_date') ) !!}
+                
+                {!! Form::date('recieved_date', $purchase->recieved_date, ['class' => 'form-control', 'required']); !!}
+              </div>
+            </div>
+
+            <div class="@if(!empty($default_purchase_status)) col-sm-4 @else col-sm-3 @endif">
+              <div class="form-group">
+                {!! Form::label('invoice_date', __('purchase.invoice_date') ) !!}
+                
+                {!! Form::date('invoice_date', $purchase->invoice_date, ['class' => 'form-control', 'required']); !!}
+              </div>
+            </div>
+
+            <div class="@if(!empty($default_purchase_status)) col-sm-4 @else col-sm-3 @endif">
+              <div class="form-group">
+                {!! Form::label('job_no', __('purchase.job_no') . '*') !!}
+                @show_tooltip(__('lang_v1.leave_empty_to_autogenerate'))
+                {!! Form::text('job_no', $purchase->job_no, ['class' => 'form-control', 'required']); !!}
+              </div>
+            </div>
+
+            <div class="@if(!empty($default_purchase_status)) col-sm-4 @else col-sm-3 @endif">
+              <div class="form-group">
+                {!! Form::label('job_ref', __('purchase.job_ref') ) !!}
+                {!! Form::text('job_ref', $purchase->job_ref, ['class' => 'form-control', 'required']); !!}
+              </div>
+            </div>
+
+
+
+
             
             <div class="col-sm-3 @if(!empty($default_purchase_status)) hide @endif">
               <div class="form-group">
@@ -87,6 +154,9 @@
                 {!! Form::select('location_id', $business_locations, $purchase->location_id, ['class' => 'form-control select2', 'placeholder' => __('messages.please_select'), 'disabled']); !!}
               </div>
             </div>
+
+
+   
 
             <!-- Currency Exchange Rate -->
             <div class="col-sm-3 @if(!$currency_details->purchase_in_diff_currency) hide @endif">

@@ -61,7 +61,7 @@
         </div>
     </div>
 <div class="clearfix"></div>
-    <div class="col-sm-6">
+    <!-- <div class="col-sm-6">
         <div class="form-group">
             <div class="checkbox">
                 <label>
@@ -70,9 +70,9 @@
               @show_tooltip(__('lang_v1.tooltip_enable_lot_number'))
             </div>
         </div>
-    </div>
+    </div> -->
 
-    <div class="col-sm-6">
+    <!-- <div class="col-sm-6">
         <div class="form-group">
             <div class="checkbox">
                 <label>
@@ -94,7 +94,7 @@
               @show_tooltip(__('lang_v1.purchase_requisition_help_text'))
             </div>
         </div>
-    </div>
+    </div> -->
 
     </div>
 </div>
