@@ -1,4 +1,4 @@
-## About Ultimate POS
+## About  POS
 
 Ultimate POS is a POS application by [Ultimate Fosters](http://ultimatefosters.com), a brand of [The Web Fosters](http://thewebfosters.com).
 
@@ -16,3 +16,4 @@ The Ultimate POS software is licensed under the [Codecanyon license](https://cod
 # ahmadPOS
 "# ahmadPOS" 
 "# customPOS" 
+"# CutstomUpdatedPOS" 
