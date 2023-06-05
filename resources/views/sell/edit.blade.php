@@ -472,7 +472,7 @@
 			    <div class="col-md-12">
 			    	<div class="form-group">
 						{!! Form::label('sell_note',__('sale.sell_note') . ':') !!}
-						{!! Form::textarea('sale_note', $transaction->additional_notes, ['class' => 'form-control', 'rows' => 3]); !!}
+						{!! Form::text('sale_note', $transaction->additional_notes, ['class' => 'form-control', 'rows' => 3]); !!}
 					</div>
 			    </div>
 			    <input type="hidden" name="is_direct_sale" value="1">
@@ -482,13 +482,13 @@
 			<div class="col-md-4">
 				<div class="form-group">
 		            {!! Form::label('shipping_details', __('sale.shipping_details')) !!}
-		            {!! Form::textarea('shipping_details',$transaction->shipping_details, ['class' => 'form-control','placeholder' => __('sale.shipping_details') ,'rows' => '3', 'cols'=>'30']); !!}
+		            {!! Form::text('shipping_details',$transaction->shipping_details, ['class' => 'form-control','placeholder' => __('sale.shipping_details') ,'rows' => '3', 'cols'=>'30']); !!}
 		        </div>
 			</div>
 			<div class="col-md-4">
 				<div class="form-group">
 		            {!! Form::label('shipping_address', __('lang_v1.shipping_address')) !!}
-		            {!! Form::textarea('shipping_address', $transaction->shipping_address, ['class' => 'form-control','placeholder' => __('lang_v1.shipping_address') ,'rows' => '3', 'cols'=>'30']); !!}
+		            {!! Form::text('shipping_address', $transaction->shipping_address, ['class' => 'form-control','placeholder' => __('lang_v1.shipping_address') ,'rows' => '3', 'cols'=>'30']); !!}
 		        </div>
 			</div>
 			<div class="col-md-4">

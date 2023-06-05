@@ -17,7 +17,7 @@
 
       <div class="form-group col-md-12">
         {!! Form::label('description', __( 'lang_v1.description' ) . ':') !!}
-          {!! Form::textarea('description', null, ['class' => 'form-control', 'placeholder' => __( 'lang_v1.description' ), 'rows' => 3]); !!}
+          {!! Form::text('description', null, ['class' => 'form-control', 'placeholder' => __( 'lang_v1.description' ), 'rows' => 3]); !!}
       </div>
 
       <div class="form-group col-md-12">

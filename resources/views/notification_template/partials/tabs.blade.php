@@ -53,7 +53,7 @@
                     <div class="form-group">
                         {!! Form::label($key . '_email_body',
                         __('lang_v1.email_body').':') !!}
-                        {!! Form::textarea('template_data[' . $key . '][email_body]', 
+                        {!! Form::text('template_data[' . $key . '][email_body]', 
                         $value['email_body'], ['class' => 'form-control ckeditor'
                         , 'placeholder' => __('lang_v1.email_body'), 'id' => $key . '_email_body', 'rows' => 6]); !!}
                     </div>
@@ -62,7 +62,7 @@
                     <div class="form-group">
                         {!! Form::label($key . '_sms_body',
                         __('lang_v1.sms_body').':') !!}
-                        {!! Form::textarea('template_data[' . $key . '][sms_body]', 
+                        {!! Form::text('template_data[' . $key . '][sms_body]', 
                         $value['sms_body'], ['class' => 'form-control'
                         , 'placeholder' => __('lang_v1.sms_body'), 'id' => $key . '_sms_body', 'rows' => 6]); !!}
                     </div>
@@ -71,7 +71,7 @@
                     <div class="form-group">
                         {!! Form::label($key . '_whatsapp_text',
                         __('lang_v1.whatsapp_text').':') !!}
-                        {!! Form::textarea('template_data[' . $key . '][whatsapp_text]', 
+                        {!! Form::text('template_data[' . $key . '][whatsapp_text]', 
                         $value['whatsapp_text'], ['class' => 'form-control'
                         , 'placeholder' => __('lang_v1.whatsapp_text'), 'id' => $key . '_whatsapp_text', 'rows' => 6]); !!}
                     </div>

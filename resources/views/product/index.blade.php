@@ -57,8 +57,9 @@
             </div>
         </div>
         <div class="col-md-3">
-            <br>
             <div class="form-group">
+            {!! Form::label('status',  __('Status') . ':') !!}
+
                 {!! Form::select('active_state', ['active' => __('business.is_active'), 'inactive' => __('lang_v1.inactive')], null, ['class' => 'form-control select2', 'style' => 'width:100%', 'id' => 'active_state', 'placeholder' => __('lang_v1.all')]); !!}
             </div>
         </div>
@@ -72,14 +73,8 @@
             @endforeach
         @endif
 
-        <div class="col-md-3">
-          <div class="form-group">
-            <br>
-            <label>
-              {!! Form::checkbox('not_for_selling', 1, false, ['class' => 'input-icheck', 'id' => 'not_for_selling']); !!} <strong>@lang('lang_v1.not_for_selling')</strong>
-            </label>
-          </div>
-        </div>
+    
+        
         @if($is_woocommerce)
             <div class="col-md-3">
                 <div class="form-group">
@@ -199,8 +194,13 @@
                         { data: 'mass_delete'  },
                         { data: 'image', name: 'products.image'  },
                         { data: 'action', name: 'action'},
+                        { data: 'sku', name: 'products.sku'},
                         { data: 'product', name: 'products.name'  },
                         { data: 'product_locations', name: 'product_locations'  },
+
+                        // { data: 'default_purchase_price', name: 'products.default_purchase_price'  },
+                        // { data: 'discount', name: 'products.discount'  },
+
                         @can('view_purchase_price')
                             { data: 'purchase_price', name: 'max_purchase_price', searchable: false},
                         @endcan
@@ -212,11 +212,10 @@
                         { data: 'category', name: 'c1.name'},
                         { data: 'brand', name: 'brands.name'},
                         { data: 'tax', name: 'tax_rates.name', searchable: false},
-                        { data: 'sku', name: 'products.sku'},
-                        { data: 'product_custom_field1', name: 'products.product_custom_field1'  },
-                        { data: 'product_custom_field2', name: 'products.product_custom_field2'  },
-                        { data: 'product_custom_field3', name: 'products.product_custom_field3'  },
-                        { data: 'product_custom_field4', name: 'products.product_custom_field4'  }
+                        // { data: 'product_custom_field1', name: 'products.product_custom_field1'  },
+                        // { data: 'product_custom_field2', name: 'products.product_custom_field2'  },
+                        // { data: 'product_custom_field3', name: 'products.product_custom_field3'  },
+                        // { data: 'product_custom_field4', name: 'products.product_custom_field4'  }
                         
                     ],
                     createdRow: function( row, data, dataIndex ) {
@@ -491,10 +490,10 @@
                     stock_report_cols.push({ data: 'total_sold', name: 'total_sold', searchable: false });
                     stock_report_cols.push({ data: 'total_transfered', name: 'total_transfered', searchable: false });
                     stock_report_cols.push({ data: 'total_adjusted', name: 'total_adjusted', searchable: false });
-                    stock_report_cols.push({ data: 'product_custom_field1', name: 'p.product_custom_field1'});
-                    stock_report_cols.push({ data: 'product_custom_field2', name: 'p.product_custom_field2'});
-                    stock_report_cols.push({ data: 'product_custom_field3', name: 'p.product_custom_field3'});
-                    stock_report_cols.push({ data: 'product_custom_field4', name: 'p.product_custom_field4'});
+                    // stock_report_cols.push({ data: 'product_custom_field1', name: 'p.product_custom_field1'});
+                    // stock_report_cols.push({ data: 'product_custom_field2', name: 'p.product_custom_field2'});
+                    // stock_report_cols.push({ data: 'product_custom_field3', name: 'p.product_custom_field3'});
+                    // stock_report_cols.push({ data: 'product_custom_field4', name: 'p.product_custom_field4'});
 
                     if ($('th.current_stock_mfg').length) {
                         stock_report_cols.push({ data: 'total_mfg_stock', name: 'total_mfg_stock', searchable: false });

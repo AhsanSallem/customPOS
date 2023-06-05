@@ -69,7 +69,7 @@
             @if($account_transaction->sub_type == 'fund_transfer' || $account_transaction->sub_type == 'deposit')
             <div class="form-group">
                 {!! Form::label('note', __( 'brand.note' )) !!}
-                {!! Form::textarea('note', $account_transaction->note, ['class' => 'form-control', 'placeholder' => __( 'brand.note' ), 'rows' => 4]); !!}
+                {!! Form::text('note', $account_transaction->note, ['class' => 'form-control', 'placeholder' => __( 'brand.note' ), 'rows' => 4]); !!}
             </div>
             @endif
     </div>

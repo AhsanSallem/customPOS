@@ -78,7 +78,7 @@
                 <div class="col-sm-6">
                     <div class="form-group">
                         {!! Form::label('expense_additional_notes', __('expense.expense_note') . ':') !!}
-                                {!! Form::textarea('additional_notes', null, ['class' => 'form-control', 'rows' => 3, 'id' => 'expense_additional_notes']); !!}
+                                {!! Form::text('additional_notes', null, ['class' => 'form-control', 'rows' => 3, 'id' => 'expense_additional_notes']); !!}
                     </div>
                 </div>
             </div>

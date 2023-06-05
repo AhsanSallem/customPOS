@@ -17,7 +17,7 @@ return [
     'job_no' => 'Job No',
     'job_ref' => 'Job Reference',
     
-    'business_location' => 'Business Location',
+    'business_location' => 'Branch',
     'purchases' => 'Purchases',
     'add_payment' => 'Add payment',
     'edit_payment' => 'Edit payment',

@@ -202,13 +202,13 @@
         <div class="col-md-4">
           <div class="form-group">
                   {!! Form::label('shipping_details', __('sale.shipping_details')) !!}
-                  {!! Form::textarea('shipping_details',$purchase->shipping_details, ['class' => 'form-control','placeholder' => __('sale.shipping_details') ,'rows' => '3', 'cols'=>'30']); !!}
+                  {!! Form::text('shipping_details',$purchase->shipping_details, ['class' => 'form-control','placeholder' => __('sale.shipping_details') ,'rows' => '3', 'cols'=>'30']); !!}
               </div>
         </div>
         <div class="col-md-4">
           <div class="form-group">
                   {!! Form::label('shipping_address', __('lang_v1.shipping_address')) !!}
-                  {!! Form::textarea('shipping_address',$purchase->shipping_address, ['class' => 'form-control','placeholder' => __('lang_v1.shipping_address') ,'rows' => '3', 'cols'=>'30']); !!}
+                  {!! Form::text('shipping_address',$purchase->shipping_address, ['class' => 'form-control','placeholder' => __('lang_v1.shipping_address') ,'rows' => '3', 'cols'=>'30']); !!}
               </div>
         </div>
         <div class="col-md-4">
@@ -463,7 +463,7 @@
                     <td colspan="4">
                       <div class="form-group">
                         {!! Form::label('additional_notes',__('purchase.additional_notes')) !!}
-                        {!! Form::textarea('additional_notes', $purchase->additional_notes, ['class' => 'form-control', 'rows' => 3]); !!}
+                        {!! Form::text('additional_notes', $purchase->additional_notes, ['class' => 'form-control', 'rows' => 3]); !!}
                       </div>
                     </td>
                   </tr>

@@ -137,7 +137,7 @@
 	<div class="col-md-12">
 		<div class="form-group">
 			{!! Form::label("note_$row_index", __('sale.payment_note') . ':') !!}
-			{!! Form::textarea("payment[$row_index][note]", $payment_line['note'], ['class' => 'form-control', 'rows' => 3, 'id' => "note_$row_index"]); !!}
+			{!! Form::text("payment[$row_index][note]", $payment_line['note'], ['class' => 'form-control', 'rows' => 3, 'id' => "note_$row_index"]); !!}
 		</div>
 	</div>
 </div>

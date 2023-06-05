@@ -25,7 +25,7 @@
 
             <div class="form-group">
                 {!! Form::label('note', __( 'brand.note' ) . ':') !!}
-                  {!! Form::textarea('note', $discount->additional_notes, ['class' => 'form-control', 'placeholder' => __( 'brand.note'), 'rows' => 3 ]); !!}
+                  {!! Form::text('note', $discount->additional_notes, ['class' => 'form-control', 'placeholder' => __( 'brand.note'), 'rows' => 3 ]); !!}
             </div>
         </div>
         <div class="modal-footer">

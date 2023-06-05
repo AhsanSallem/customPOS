@@ -32,7 +32,7 @@
       @endif
       <div class="form-group">
         {!! Form::label('description', __( 'lang_v1.description' ) . ':') !!}
-        {!! Form::textarea('description', $category->description, ['class' => 'form-control', 'placeholder' => __( 'lang_v1.description'), 'rows' => 3]); !!}
+        {!! Form::text('description', $category->description, ['class' => 'form-control', 'placeholder' => __( 'lang_v1.description'), 'rows' => 3]); !!}
       </div>
       @if(!empty($parent_categories) && $enable_sub_category)
           <div class="form-group">

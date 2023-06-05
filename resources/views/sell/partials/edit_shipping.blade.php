@@ -10,14 +10,14 @@
 				<div class="col-md-6">
 			        <div class="form-group">
 			            {!! Form::label('shipping_details', __('sale.shipping_details') . ':*' ) !!}
-			            {!! Form::textarea('shipping_details', !empty($transaction->shipping_details) ? $transaction->shipping_details : '', ['class' => 'form-control','placeholder' => __('sale.shipping_details'), 'required' ,'rows' => '4']); !!}
+			            {!! Form::text('shipping_details', !empty($transaction->shipping_details) ? $transaction->shipping_details : '', ['class' => 'form-control','placeholder' => __('sale.shipping_details'), 'required' ,'rows' => '4']); !!}
 			        </div>
 			    </div>
 
 			    <div class="col-md-6">
 			        <div class="form-group">
 			            {!! Form::label('shipping_address', __('lang_v1.shipping_address') . ':' ) !!}
-			            {!! Form::textarea('shipping_address',!empty($transaction->shipping_address) ? $transaction->shipping_address : '', ['class' => 'form-control','placeholder' => __('lang_v1.shipping_address') ,'rows' => '4']); !!}
+			            {!! Form::text('shipping_address',!empty($transaction->shipping_address) ? $transaction->shipping_address : '', ['class' => 'form-control','placeholder' => __('lang_v1.shipping_address') ,'rows' => '4']); !!}
 			        </div>
 			    </div>
 
@@ -137,7 +137,7 @@
 		        <div class="col-md-12">
 			        <div class="form-group">
 			            {!! Form::label('shipping_note', __('lang_v1.shipping_note') . ':' ) !!}
-			            {!! Form::textarea('shipping_note', null, ['class' => 'form-control','placeholder' => __('lang_v1.shipping_note') ,'rows' => '4']); !!}
+			            {!! Form::text('shipping_note', null, ['class' => 'form-control','placeholder' => __('lang_v1.shipping_note') ,'rows' => '4']); !!}
 			        </div>
 			    </div>
 		        <div class="col-md-12">

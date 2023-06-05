@@ -157,6 +157,18 @@ Route::middleware(['setData', 'auth', 'SetSessionData', 'language', 'timezone', 
     Route::resource('variation-templates', VariationTemplateController::class);
 
     Route::get('/products/download-excel', [ProductController::class, 'downloadExcel']);
+    // Route::get('/purchase/download-excel', [PurchaseController::class, 'downloadExcel2']);
+
+
+
+
+
+
+
+
+
+
+
 
     Route::get('/products/stock-history/{id}', [ProductController::class, 'productStockHistory']);
     Route::get('/delete-media/{media_id}', [ProductController::class, 'deleteMedia']);
@@ -492,11 +504,16 @@ Route::middleware(['setData', 'auth', 'SetSessionData', 'language', 'timezone', 
 // Route::middleware(['auth'])->group(function () {
 //     Route::get('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
 // });
+Route::middleware(['auth'])->group(function () {
+    Route::match(['get', 'post'], '/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
+    Route::get('/user-logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('user.logout');
+});
 
 Route::middleware(['setData', 'auth', 'SetSessionData', 'language', 'timezone'])->group(function () {
     Route::get('/load-more-notifications', [HomeController::class, 'loadMoreNotifications']);
     Route::get('/get-total-unread', [HomeController::class, 'getTotalUnreadNotifications']);
-    Route::get('/purchases/print/{id}', [PurchaseController::class, 'printInvoice']);
+    // Route::get('/purchases/print/{id}', [PurchaseController::class, 'printInvoice']);
+    Route::get('/purchases/print/{id}/{name}', [PurchaseController::class, 'printInvoice']);
     Route::get('/purchases/{id}', [PurchaseController::class, 'show']);
     Route::get('/download-purchase-order/{id}/pdf', [PurchaseOrderController::class, 'downloadPdf'])->name('purchaseOrder.downloadPdf');
     Route::get('/sells/{id}', [SellController::class, 'show']);

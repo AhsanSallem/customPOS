@@ -44,7 +44,7 @@
       <div class="col-md-12">
         <div class="form-group">
           {!! Form::label('address', __( 'business.address' ) . ':') !!}
-            {!! Form::textarea('address', null, ['class' => 'form-control', 'placeholder' => __( 'business.address'), 'rows' => 3 ]); !!}
+            {!! Form::text('address', null, ['class' => 'form-control', 'placeholder' => __( 'business.address'), 'rows' => 3 ]); !!}
         </div>
       </div>
 

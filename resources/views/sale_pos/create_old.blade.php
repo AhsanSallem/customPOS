@@ -53,6 +53,26 @@
 								</div>
 							</div>
 						@endif
+
+
+						@if(!empty($pos_settings['enable_transaction_date']))
+							<div class="col-md-4 col-sm-6">
+								<div class="form-group">
+									{!! Form::label('transaction_date', __('sale.sale_date') . ':*') !!}
+									<div class="input-group">
+										<span class="input-group-addon">
+											<i class="fa fa-calendar"></i>
+										</span>
+										{!! Form::text('transaction_date', $default_datetime, ['class' => 'form-control', 'readonly', 'required']); !!}
+									</div>
+								</div>
+							</div>
+						@endif
+
+
+
+
+						
 						@if(config('constants.enable_sell_in_diff_currency') == true)
 							<div class="col-md-4 col-sm-6">
 								<div class="form-group">

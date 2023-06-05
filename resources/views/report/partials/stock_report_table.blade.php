@@ -9,7 +9,7 @@
     <thead>
         <tr>
             <th>@lang('messages.action')</th>
-            <th>SKU</th>
+            <th>Product Id</th>
             <th>@lang('business.product')</th>
             <th>@lang('lang_v1.variation')</th>
             <th>@lang('product.category')</th>
@@ -24,10 +24,10 @@
             <th>@lang('report.total_unit_sold')</th>
             <th>@lang('lang_v1.total_unit_transfered')</th>
             <th>@lang('lang_v1.total_unit_adjusted')</th>
-            <th>{{$product_custom_field1}}</th>
+            <!-- <th>{{$product_custom_field1}}</th>
             <th>{{$product_custom_field2}}</th>
             <th>{{$product_custom_field3}}</th>
-            <th>{{$product_custom_field4}}</th>
+            <th>{{$product_custom_field4}}</th> -->
             @if($show_manufacturing_data)
                 <th class="current_stock_mfg">@lang('manufacturing::lang.current_stock_mfg') @show_tooltip(__('manufacturing::lang.mfg_stock_tooltip'))</th>
             @endif
@@ -45,7 +45,7 @@
             <td class="footer_total_sold"></td>
             <td class="footer_total_transfered"></td>
             <td class="footer_total_adjusted"></td>
-            <td colspan="4"></td>
+            <!-- <td colspan="4"></td> -->
             @if($show_manufacturing_data)
                 <td class="footer_total_mfg_stock"></td>
             @endif

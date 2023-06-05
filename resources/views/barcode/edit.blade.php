@@ -29,7 +29,7 @@
         <div class="col-sm-12">
           <div class="form-group">
             {!! Form::label('description', __('barcode.setting_description') ) !!}
-              {!! Form::textarea('description', $barcode->description, ['class' => 'form-control',
+              {!! Form::text('description', $barcode->description, ['class' => 'form-control',
               'placeholder' => __('barcode.setting_description'), 'rows' => 3]); !!}
           </div>
         </div>

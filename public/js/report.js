@@ -60,7 +60,7 @@ $(document).ready(function() {
             { data: 'total_purchase_return', name: 'total_purchase_return' },
             { data: 'total_invoice', name: 'total_invoice' },
             { data: 'total_sell_return', name: 'total_sell_return' },
-            { data: 'opening_balance_due', name: 'opening_balance_due' },
+            // { data: 'opening_balance_due', name: 'opening_balance_due' },
             { data: 'due', name: 'due' },
         ],
         fnDrawCallback: function(oSettings) {

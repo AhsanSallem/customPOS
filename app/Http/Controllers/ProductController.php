@@ -60,6 +60,8 @@ class ProductController extends Controller
      */
     public function index()
     {
+        //Artisan::call('route:clear');
+        //dd('yes');
         if (! auth()->user()->can('product.view') && ! auth()->user()->can('product.create')) {
             abort(403, 'Unauthorized action.');
         }
@@ -127,8 +129,8 @@ class ProductController extends Controller
                 'products.product_custom_field4',
                 'products.alert_quantity',
                 DB::raw('SUM(vld.qty_available) as current_stock'),
-                DB::raw('MAX(v.sell_price_inc_tax) as max_price'),
-                DB::raw('MIN(v.sell_price_inc_tax) as min_price'),
+                DB::raw('MAX(v.default_sell_price) as max_price'),
+                DB::raw('MIN(v.default_sell_price) as min_price'),
                 DB::raw('MAX(v.dpp_inc_tax) as max_purchase_price'),
                 DB::raw('MIN(v.dpp_inc_tax) as min_purchase_price')
                 );
@@ -426,8 +428,8 @@ class ProductController extends Controller
     {
         //Product types also includes modifier.
         return ['single' => __('lang_v1.single'),
-            'variable' => __('lang_v1.variable'),
-            'combo' => __('lang_v1.combo'),
+            // 'variable' => __('lang_v1.variable'),
+            // 'combo' => __('lang_v1.combo'),
         ];
     }
 
@@ -531,7 +533,7 @@ class ProductController extends Controller
                     }
                 }
 
-                $this->productUtil->createSingleProductVariation($product->id, $product->sku, $request->input('item_level_purchase_price_total'), $request->input('purchase_price_inc_tax'), $request->input('profit_percent'), $request->input('selling_price'), $request->input('selling_price_inc_tax'), $combo_variations);
+                $this->productUtil->createSingleProductVariation($product->id, $product->sku,$request->input('single_dpp_inc_tax2'), $request->input('item_level_purchase_price_total'), $request->input('purchase_price_inc_tax'), $request->input('profit_percent'), $request->input('selling_price'), $request->input('selling_price_inc_tax'), $combo_variations);
             }
 
             //Add product racks details.
@@ -668,13 +670,16 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+        // dd($request->list_discount);
+        
         if (! auth()->user()->can('product.update')) {
             abort(403, 'Unauthorized action.');
         }
 
         try {
             $business_id = $request->session()->get('user.business_id');
-            $product_details = $request->only(['name', 'brand_id', 'supplier_id', 'range' ,'unit_id', 'category_id', 'tax', 'barcode_type', 'sku', 'alert_quantity', 'tax_type', 'weight', 'product_custom_field1', 'product_custom_field2', 'product_custom_field3', 'product_custom_field4', 'product_description', 'sub_unit_ids', 'preparation_time_in_minutes']);
+            $product_details = $request->only(['name', 'brand_id', 'supplier_id', 'range', 'unit_id', 'category_id', 'tax', 'barcode_type', 'sku', 'alert_quantity', 'tax_type', 'weight', 'product_custom_field1', 'product_custom_field2', 'product_custom_field3', 'product_custom_field4', 'product_description', 'sub_unit_ids', 'preparation_time_in_minutes']);
 
             DB::beginTransaction();
 
@@ -692,6 +697,12 @@ class ProductController extends Controller
 
             $product->name = $product_details['name'];
             $product->brand_id = $product_details['brand_id'];
+
+            $product->supplier_id = $product_details['supplier_id'];
+
+            $product->range = $product_details['range'];
+
+
             $product->unit_id = $product_details['unit_id'];
             $product->category_id = $product_details['category_id'];
             $product->tax = $product_details['tax'];
@@ -699,16 +710,16 @@ class ProductController extends Controller
             $product->sku = $product_details['sku'];
             $product->alert_quantity = ! empty($product_details['alert_quantity']) ? $this->productUtil->num_uf($product_details['alert_quantity']) : $product_details['alert_quantity'];
             $product->tax_type = $product_details['tax_type'];
-            $product->weight = $product_details['weight'];
-            $product->product_custom_field1 = $product_details['product_custom_field1'];
-            $product->product_custom_field2 = $product_details['product_custom_field2'];
-            $product->product_custom_field3 = $product_details['product_custom_field3'];
-            $product->product_custom_field4 = $product_details['product_custom_field4'];
+            // $product->weight = $product_details['weight'];
+            // $product->product_custom_field1 = $product_details['product_custom_field1'];
+            // $product->product_custom_field2 = $product_details['product_custom_field2'];
+            // $product->product_custom_field3 = $product_details['product_custom_field3'];
+            // $product->product_custom_field4 = $product_details['product_custom_field4'];
             $product->product_description = $product_details['product_description'];
             $product->sub_unit_ids = ! empty($product_details['sub_unit_ids']) ? $product_details['sub_unit_ids'] : null;
-            $product->preparation_time_in_minutes = $product_details['preparation_time_in_minutes'];
-            $product->warranty_id = ! empty($request->input('warranty_id')) ? $request->input('warranty_id') : null;
-            $product->secondary_unit_id = ! empty($request->input('secondary_unit_id')) ? $request->input('secondary_unit_id') : null;
+            // $product->preparation_time_in_minutes = $product_details['preparation_time_in_minutes'];
+            // $product->warranty_id = ! empty($request->input('warranty_id')) ? $request->input('warranty_id') : null;
+            // $product->secondary_unit_id = ! empty($request->input('secondary_unit_id')) ? $request->input('secondary_unit_id') : null;
 
             if (! empty($request->input('enable_stock')) && $request->input('enable_stock') == 1) {
                 $product->enable_stock = 1;
@@ -779,12 +790,15 @@ class ProductController extends Controller
             $product->product_locations()->sync($product_locations);
 
             if ($product->type == 'single') {
-                $single_data = $request->only(['single_variation_id', 'single_dpp', 'single_dpp', 'single_dsp_inc_tax', 'profit_percent', 'single_dsp']);
+                $single_data = $request->only(['single_variation_id', 'single_dpp', 'single_dpp', 'list_discount','single_dpp_inc_tax2','single_dsp_inc_tax', 'profit_percent', 'single_dsp']);
                 $variation = Variation::find($single_data['single_variation_id']);
 
                 $variation->sub_sku = $product->sku;
-                $variation->default_purchase_price = $this->productUtil->num_uf($single_data['single_dpp']);
+                $variation->default_purchase_price = $this->productUtil->num_uf($single_data['single_dpp_inc_tax2']);
                 $variation->dpp_inc_tax = $this->productUtil->num_uf($single_data['single_dpp']);
+                $variation->discount = $this->productUtil->num_uf($single_data['list_discount']);
+
+                
                 $variation->profit_percent = $this->productUtil->num_uf($single_data['profit_percent']);
                 $variation->default_sell_price = $this->productUtil->num_uf($single_data['single_dsp']);
                 $variation->sell_price_inc_tax = $this->productUtil->num_uf($single_data['single_dsp_inc_tax']);
@@ -825,6 +839,8 @@ class ProductController extends Controller
                 $variation->sub_sku = $product->sku;
                 $variation->default_purchase_price = $this->productUtil->num_uf($request->input('item_level_purchase_price_total'));
                 $variation->dpp_inc_tax = $this->productUtil->num_uf($request->input('purchase_price_inc_tax'));
+                
+                $variation->discount = $this->productUtil->num_uf($single_data['list_discount']);
                 $variation->profit_percent = $this->productUtil->num_uf($request->input('profit_percent'));
                 $variation->default_sell_price = $this->productUtil->num_uf($request->input('selling_price'));
                 $variation->sell_price_inc_tax = $this->productUtil->num_uf($request->input('selling_price_inc_tax'));
@@ -1473,6 +1489,8 @@ class ProductController extends Controller
             $this->productUtil->createSingleProductVariation(
                 $product->id,
                 $product->sku,
+                $product->single_dpp_inc_tax2,
+
                 $request->input('single_dpp'),
                 $request->input('single_dpp'),
                 $request->input('profit_percent'),

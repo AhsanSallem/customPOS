@@ -128,7 +128,7 @@
 				<div class="col-sm-4">
 					<div class="form-group">
 						{!! Form::label('additional_notes',__('purchase.additional_notes')) !!}
-						{!! Form::textarea('additional_notes', $sell_transfer->additional_notes, ['class' => 'form-control', 'rows' => 3]); !!}
+						{!! Form::text('additional_notes', $sell_transfer->additional_notes, ['class' => 'form-control', 'rows' => 3]); !!}
 					</div>
 				</div>
 			</div>

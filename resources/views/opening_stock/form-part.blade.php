@@ -34,7 +34,7 @@
 	@if(empty($purchases[$key][$variation->id]))
 		@php
 			$purchases[$key][$variation->id][] = ['quantity' => 0, 
-			'purchase_price' => $variation->default_purchase_price,
+			'purchase_price' => $variation->dpp_inc_tax,
 			'purchase_line_id' => null,
 			'lot_number' => null,
 			'transaction_date' => null,
@@ -107,7 +107,7 @@
 		</div>
 	</td>
 	<td>
-		{!! Form::textarea('stocks[' . $key . '][' . $variation->id . '][' . $sub_key . '][purchase_line_note]', $purchase_line_note , ['class' => 'form-control input-sm', 'rows' => 3 ]); !!}
+		{!! Form::text('stocks[' . $key . '][' . $variation->id . '][' . $sub_key . '][purchase_line_note]', $purchase_line_note , ['class' => 'form-control input-sm', 'rows' => 3 ]); !!}
 	</td>
 	<td>
 		@if($loop->index == 0)

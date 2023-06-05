@@ -892,7 +892,7 @@
         </div>
         <hr>
       @endif
-      <div class="row check_group">
+      <!-- <div class="row check_group">
         <div class="col-md-1">
           <h4>@lang( 'sale.draft' )</h4>
         </div>
@@ -911,8 +911,8 @@
             [ 'class' => 'input-icheck']) !!} {{ __( 'lang_v1.view_all_drafts' ) }}
           </label>
         </div>
-      </div>
-          <div class="col-md-12">
+      </div> -->
+          <!-- <div class="col-md-12">
             <div class="checkbox">
               <label>
                 {!! Form::radio('radio_option[draft_view]', 'draft.view_own', in_array('draft.view_own', $role_permissions), 
@@ -935,7 +935,7 @@
                 [ 'class' => 'input-icheck']); !!} {{ __( 'lang_v1.delete_draft' ) }}
               </label>
             </div>
-          </div>
+          </div> -->
 
         </div>
       </div>
@@ -1034,7 +1034,7 @@
                 </div>
             </div>
         </div>
-        <hr>
+        <!-- <hr>
         <div class="row check_group">
         <div class="col-md-1">
           <h4>@lang( 'cash_register.cash_register' )</h4>
@@ -1064,7 +1064,7 @@
             </div>
           </div>
         </div>
-        </div>
+        </div> -->
         
         <hr>
         <div class="row check_group">
@@ -1476,7 +1476,7 @@
         </div>
         </div>
         <hr>
-        <div class="row check_group">
+        <!-- <div class="row check_group">
         <div class="col-md-3">
           <h4>@lang( 'account.account' )</h4>
         </div>
@@ -1510,7 +1510,7 @@
           
         </div>
         </div>
-        <hr>
+        <hr> -->
         @if(in_array('booking', $enabled_modules))
         <div class="row check_group">
         <div class="col-md-1">

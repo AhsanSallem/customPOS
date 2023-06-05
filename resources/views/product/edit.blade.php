@@ -24,15 +24,15 @@
 
     @component('components.widget', ['class' => 'box-primary'])
         <div class="row">
-          
 
-            <div class="col-sm-4">
+          <div class="col-sm-4">
               <div class="form-group">
                 {!! Form::label('sku', __('product.sku')  . ':*') !!} @show_tooltip(__('tooltip.sku'))
                 {!! Form::text('sku', $product->sku, ['class' => 'form-control',
                 'placeholder' => __('product.sku'), 'required']); !!}
               </div>
             </div>
+
 
             <div class="col-sm-4">
               <div class="form-group">
@@ -42,20 +42,15 @@
               </div>
             </div>
 
+            
+
+                {!! Form::hidden('barcode_type', $product->barcode_type, ['class' => 'form-control',
+                'placeholder' => __('product.sku'), 'required']); !!}
 
 
-            <!-- <div class="col-sm-4">
-              <div class="form-group">
-                {!! Form::label('barcode_type', __('product.barcode_type') . ':*') !!}
-                  {!! Form::select('barcode_type', $barcode_types, $product->barcode_type, ['placeholder' => __('messages.please_select'), 'class' => 'form-control select2', 'required']); !!}
-              </div>
-            </div>
-
-            <div class="clearfix"></div>
-             -->
-
-
-             <div class="col-sm-4">
+            <!-- <div class="clearfix"></div> -->
+            
+            <div class="col-sm-4">
               <div class="form-group">
                 {!! Form::label('unit_id', __('product.unit') . ':*') !!}
                 <div class="input-group">
@@ -67,7 +62,8 @@
               </div>
             </div>
 
-             <div class="col-sm-4">
+
+            <div class="col-sm-4">
           <div class="form-group">
             {!! Form::label('supplier_name', __('product.supplier_name') . ':*') !!}
              <select  class="form-control" name='supplier_id' required id="">
@@ -80,6 +76,7 @@
         </div>
 
 
+
         <div class="col-sm-4">
               <div class="form-group">
                 {!! Form::label('range', __('product.range') ) !!}
@@ -87,9 +84,6 @@
                   'placeholder' => __('product.range')]); !!}
               </div>
             </div>
-
-
-
 
 
 
@@ -134,19 +128,19 @@
               </div>
             </div>
 
-            <!-- <div class="col-sm-4 @if(!(session('business.enable_category') && session('business.enable_sub_category'))) hide @endif">
+            <div class="col-sm-4 @if(!(session('business.enable_category') && session('business.enable_sub_category'))) hide @endif">
               <div class="form-group">
                 {!! Form::label('sub_category_id', __('product.sub_category')  . ':') !!}
                   {!! Form::select('sub_category_id', $sub_categories, $product->sub_category_id, ['placeholder' => __('messages.please_select'), 'class' => 'form-control select2']); !!}
               </div>
-            </div> -->
+            </div>
 
-            <!-- <div class="col-sm-4">
+            <div class="col-sm-4">
               <div class="form-group">
                 {!! Form::label('product_locations', __('business.business_locations') . ':') !!} @show_tooltip(__('lang_v1.product_location_help'))
                   {!! Form::select('product_locations[]', $business_locations, $product->product_locations->pluck('id'), ['class' => 'form-control select2', 'multiple', 'id' => 'product_locations']); !!}
               </div>
-            </div> -->
+            </div>
 
             <div class="clearfix"></div>
             
@@ -196,39 +190,47 @@
               </div>
             </div>
             </div>
-            <div class="col-sm-4">
-              <div class="form-group">
-                {!! Form::label('product_brochure', __('lang_v1.product_brochure') . ':') !!}
-                {!! Form::file('product_brochure', ['id' => 'product_brochure', 'accept' => implode(',', array_keys(config('constants.document_upload_mimes_types')))]); !!}
-                <small>
-                    <p class="help-block">
-                        @lang('lang_v1.previous_file_will_be_replaced')<br>
-                        @lang('purchase.max_file_size', ['size' => (config('constants.document_size_limit') / 1000000)])
-                        @includeIf('components.document_help_text')
-                    </p>
-                </small>
-              </div>
-            </div>
+            <!--<div class="col-sm-4">-->
+            <!--  <div class="form-group">-->
+            <!--    {!! Form::label('product_brochure', __('lang_v1.product_brochure') . ':') !!}-->
+            <!--    {!! Form::file('product_brochure', ['id' => 'product_brochure', 'accept' => implode(',', array_keys(config('constants.document_upload_mimes_types')))]); !!}-->
+            <!--    <small>-->
+            <!--        <p class="help-block">-->
+            <!--            @lang('lang_v1.previous_file_will_be_replaced')<br>-->
+            <!--            @lang('purchase.max_file_size', ['size' => (config('constants.document_size_limit') / 1000000)])-->
+            <!--            @includeIf('components.document_help_text')-->
+            <!--        </p>-->
+            <!--    </small>-->
+            <!--  </div>-->
+            <!--</div>-->
     @endcomponent
 
-   
+  
 
     @component('components.widget', ['class' => 'box-primary'])
         <div class="row">
-            <!-- <div class="col-sm-4 @if(!session('business.enable_price_tax')) hide @endif">
+            <div class="col-sm-4 @if(!session('business.enable_price_tax')) hide @endif">
               <div class="form-group">
                 {!! Form::label('tax', __('product.applicable_tax') . ':') !!}
                   {!! Form::select('tax', $taxes, $product->tax, ['placeholder' => __('messages.please_select'), 'class' => 'form-control select2'], $tax_attributes); !!}
               </div>
             </div>
 
+
+
+
             <div class="col-sm-4 @if(!session('business.enable_price_tax')) hide @endif">
               <div class="form-group">
-                {!! Form::label('tax_type', __('product.selling_price_tax_type') . ':*') !!}
-                  {!! Form::select('tax_type',['inclusive' => __('product.inclusive'), 'exclusive' => __('product.exclusive')], $product->tax_type,
-                  ['class' => 'form-control select2', 'required']); !!}
+                <!-- {!! Form::label('tax_type', __('product.selling_price_tax_type') . ':*') !!} -->
+                <input type="hidden" value="$product->tax_type" name="tax_type">
+
+
+
               </div>
-            </div> -->
+            </div>
+
+
+
 
             <div class="clearfix"></div>
             <div class="col-sm-4">

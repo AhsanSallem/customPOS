@@ -253,7 +253,7 @@
 
 
             <!-- User in create customer & supplier -->
-            @if(config('constants.enable_contact_assign') && $type !== 'lead')
+            <!-- @if(config('constants.enable_contact_assign') && $type !== 'lead')
                 <div class="col-md-6">
                       <div class="form-group">
                           {!! Form::label('assigned_to_users', __('lang_v1.assigned_to') . ':' ) !!}
@@ -265,7 +265,7 @@
                           </div>
                       </div>
                 </div>
-            @endif
+            @endif -->
 
 
 
@@ -319,7 +319,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-4 opening_balance">
+                <!-- <div class="col-md-4 opening_balance">
                   <div class="form-group">
                       {!! Form::label('opening_balance', __('lang_v1.opening_balance') . ':') !!}
                       <div class="input-group">
@@ -329,7 +329,7 @@
                           {!! Form::text('opening_balance', 0, ['class' => 'form-control input_number']); !!}
                       </div>
                   </div>
-                </div>
+                </div> -->
 
                 <div class="col-md-4 pay_term">
                   <div class="form-group">

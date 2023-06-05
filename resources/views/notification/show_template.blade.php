@@ -61,7 +61,7 @@
                     </div>
                     <div class="form-group">
                       {!! Form::label('email_body', __('lang_v1.email_body').':') !!}
-                      {!! Form::textarea('email_body', $notification_template['email_body'], ['class' => 'form-control', 'placeholder' => __('lang_v1.email_body'), 'rows' => 6]); !!}
+                      {!! Form::text('email_body', $notification_template['email_body'], ['class' => 'form-control', 'placeholder' => __('lang_v1.email_body'), 'rows' => 6]); !!}
                     </div>
                     @if(config('constants.enable_download_pdf') && $notification_template['template_for'] == 'new_sale')
                         <label>
@@ -103,12 +103,12 @@
                           <div id="sms_div" class="hide">
                             <div class="form-group">
                               {!! Form::label('sms_body', __('lang_v1.sms_body').':') !!}
-                              {!! Form::textarea('sms_body', $notification_template['sms_body'], ['class' => 'form-control', 'placeholder' => __('lang_v1.sms_body'), 'rows' => 6]); !!}
+                              {!! Form::text('sms_body', $notification_template['sms_body'], ['class' => 'form-control', 'placeholder' => __('lang_v1.sms_body'), 'rows' => 6]); !!}
                             </div>
                           </div>
                           <div id="whatsapp_div" class="hide">
                               {!! Form::label('whatsapp_text', __('lang_v1.whatsapp_text').':') !!}
-                              {!! Form::textarea('whatsapp_text', $notification_template['whatsapp_text'], ['class' => 'form-control', 'placeholder' => __('lang_v1.whatsapp_text'), 'rows' => 6]); !!}
+                              {!! Form::text('whatsapp_text', $notification_template['whatsapp_text'], ['class' => 'form-control', 'placeholder' => __('lang_v1.whatsapp_text'), 'rows' => 6]); !!}
                           </div>
                     </div>
                   </div>

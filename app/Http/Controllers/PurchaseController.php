@@ -6,6 +6,7 @@ use App\AccountTransaction;
 use App\Business;
 use App\BusinessLocation;
 use App\Contact;
+use App\Exports\ProductsExport;
 use App\CustomerGroup;
 use App\Product;
 use App\PurchaseLine;
@@ -113,8 +114,22 @@ class PurchaseController extends Controller
                     if (auth()->user()->can('purchase.view')) {
                         $html .= '<li><a href="#" data-href="'.action([\App\Http\Controllers\PurchaseController::class, 'show'], [$row->id]).'" class="btn-modal" data-container=".view_modal"><i class="fas fa-eye" aria-hidden="true"></i>'.__('messages.view').'</a></li>';
                     }
-                    if (auth()->user()->can('purchase.view')) {
-                        $html .= '<li><a href="#" class="print-invoice" data-href="'.action([\App\Http\Controllers\PurchaseController::class, 'printInvoice'], [$row->id]).'"><i class="fas fa-print" aria-hidden="true"></i>'.__('messages.print').'</a></li>';
+                     if (auth()->user()->can('purchase.view')) {
+                        $html .= '<li>';
+                        $html .= '<span class="print-invoice" style="
+                        display: block;
+                        padding: 3px 20px;
+                        clear: both;
+                        font-weight: 400;
+                        line-height: 1.42857143;
+                        color: #333;
+                        white-space: nowrap;
+                    " ><i class="fas fa-print" aria-hidden="true"></i>'.__('messages.print').'</span>';
+                        $html .= '<ul class="submenu" style="list-style: none;">';
+                        $html .= '<li><a href="#" style="color: #333;" class="print-invoice" data-href="'.action([\App\Http\Controllers\PurchaseController::class, 'printInvoice'], [$row->id, 'Return Note']).'">Return Note</a></li>';
+                        $html .= '<li><a href="#" style="color: #333;"  class="print-invoice" data-href="'.action([\App\Http\Controllers\PurchaseController::class, 'printInvoice'], [$row->id, 'Purchase Order']).'">Own Descriptions</a></li>';
+                        $html .= '</ul>';
+                        $html .= '</li>';
                     }
                     if (auth()->user()->can('purchase.update')) {
                         $html .= '<li><a href="'.action([\App\Http\Controllers\PurchaseController::class, 'edit'], [$row->id]).'"><i class="fas fa-edit"></i>'.__('messages.edit').'</a></li>';
@@ -439,7 +454,7 @@ class PurchaseController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+     public function show($id)
     {
         // if (!auth()->user()->can('purchase.view')) {
         //     abort(403, 'Unauthorized action.');
@@ -503,9 +518,9 @@ class PurchaseController extends Controller
            ->get();
 
         $statuses = $this->productUtil->orderStatuses();
-
+        $mainTitle = "";
         return view('purchase.show')
-                ->with(compact('taxes', 'purchase', 'payment_methods', 'purchase_taxes', 'activities', 'statuses', 'purchase_order_nos', 'purchase_order_dates'));
+                ->with(compact('mainTitle','taxes', 'purchase', 'payment_methods', 'purchase_taxes', 'activities', 'statuses', 'purchase_order_nos', 'purchase_order_dates'));
     }
 
     /**
@@ -1298,7 +1313,7 @@ class PurchaseController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function printInvoice($id)
+     public function printInvoice($id, $name)
     {
         try {
             $business_id = request()->session()->get('user.business_id');
@@ -1331,9 +1346,9 @@ class PurchaseController extends Controller
                 }
                 $purchase_order_dates = implode(', ', $order_dates);
             }
-
+            $mainTitle = $name;
             $output = ['success' => 1, 'receipt' => [], 'print_title' => $purchase->ref_no];
-            $output['receipt']['html_content'] = view('purchase.partials.show_details', compact('taxes', 'purchase', 'payment_methods', 'purchase_order_nos', 'purchase_order_dates'))->render();
+            $output['receipt']['html_content'] = view('purchase.partials.show_details', compact('mainTitle','taxes', 'purchase', 'payment_methods', 'purchase_order_nos', 'purchase_order_dates'))->render();
         } catch (\Exception $e) {
             \Log::emergency('File:'.$e->getFile().'Line:'.$e->getLine().'Message:'.$e->getMessage());
 
@@ -1344,6 +1359,7 @@ class PurchaseController extends Controller
 
         return $output;
     }
+
 
     /**
      * Update purchase status.
@@ -1406,5 +1422,20 @@ class PurchaseController extends Controller
         }
 
         return $output;
+    }
+
+
+
+
+    public function downloadExcel()
+    {
+        $is_admin = $this->productUtil->is_admin(auth()->user());
+        if (! $is_admin) {
+            abort(403, 'Unauthorized action.');
+        }
+
+        $filename = 'purchase-export-'.\Carbon::now()->format('Y-m-d').'.xlsx';
+
+        return Excel::download(new ProductsExport, $filename);
     }
 }

@@ -86,6 +86,56 @@
 			</div>
 		</div>
 	@endif
+	<div class="clearfix"></div>
+
+	<!-- @if(!empty($pos_settings['enable_transaction_date'])) -->
+		<div class="col-md-3 col-sm-6">
+			<div class="form-group">
+				<div class="input-group">
+					<label>Order Point No</lable>
+					<input type="text" name="order_point" class="form-control">
+				</div>
+			</div>
+		</div>
+	<!-- @endif -->
+
+	<!-- @if(!empty($pos_settings['enable_transaction_date'])) -->
+	<div class="col-md-3 col-sm-6">
+			<div class="form-group">
+				<div class="input-group">
+					<label>Job No</lable>
+					<input type="text" name="job_no" class="form-control">
+				</div>
+			</div>
+		</div>
+	<!-- @endif -->
+
+	<!-- @if(!empty($pos_settings['enable_transaction_date'])) -->
+	<div class="col-md-3 col-sm-6">
+			<div class="form-group">
+				<div class="input-group">
+					<label>Job Reference</lable>
+					<input type="text" name="job_ref" class="form-control">
+				</div>
+			</div>
+		</div>
+	<!-- @endif -->
+
+	<!-- @if(!empty($pos_settings['enable_transaction_date'])) -->
+	<div class="col-md-3 col-sm-6">
+			<div class="form-group">
+				<div class="input-group">
+					<label>Purchase Reference</lable>
+					<input type="text" name="pur_ref" class="form-control">
+				</div>
+			</div>
+		</div>
+	<!-- @endif -->
+
+
+
+
+	
 	@if(config('constants.enable_sell_in_diff_currency') == true)
 		<div class="col-md-4 col-sm-6">
 			<div class="form-group">

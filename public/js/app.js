@@ -384,8 +384,8 @@ $(document).ready(function() {
             { data: 'email', name: 'email' },
             { data: 'tax_number', name: 'tax_number' },
             { data: 'pay_term', name: 'pay_term', searchable: false, orderable: false },
-            { data: 'opening_balance', name: 'opening_balance', searchable: false },
-            { data: 'balance', name: 'balance', searchable: false },
+            // { data: 'opening_balance', name: 'opening_balance', searchable: false },
+            // { data: 'balance', name: 'balance', searchable: false },
             { data: 'created_at', name: 'contacts.created_at' },
             { data: 'address', name: 'address', orderable: false },
             { data: 'mobile', name: 'mobile' },
@@ -412,8 +412,8 @@ $(document).ready(function() {
             { data: 'tax_number', name: 'tax_number' },
             { data: 'credit_limit', name: 'credit_limit' },
             { data: 'pay_term', name: 'pay_term', searchable: false, orderable: false },
-            { data: 'opening_balance', name: 'opening_balance', searchable: false },
-            { data: 'balance', name: 'balance', searchable: false },
+            // { data: 'opening_balance', name: 'opening_balance', searchable: false },
+            // { data: 'balance', name: 'balance', searchable: false },
             { data: 'created_at', name: 'contacts.created_at' }
         ];
 

@@ -64,7 +64,14 @@ class TransactionUtil extends Util
             'contact_id' => $input['contact_id'],
             'customer_group_id' => ! empty($input['customer_group_id']) ? $input['customer_group_id'] : null,
             'invoice_no' => $invoice_no,
-            'ref_no' => '',
+
+            'ref_no' => ! empty($input['order_point']) ? $input['order_point'] : null,
+            'job_no' => ! empty($input['job_no']) ? $input['job_no'] : null,
+            'job_ref' => ! empty($input['job_ref']) ? $input['job_ref'] : null,
+            'pur_ref_no' => ! empty($input['pur_ref']) ? $input['pur_ref'] : null,
+
+            
+
             'source' => ! empty($input['source']) ? $input['source'] : null,
             'total_before_tax' => $invoice_total['total_before_tax'],
             'transaction_date' => $input['transaction_date'],
@@ -192,6 +199,16 @@ class TransactionUtil extends Util
             'tax_id' => $input['tax_rate_id'],
             'discount_type' => $input['discount_type'],
             'discount_amount' => $uf_data ? $this->num_uf($input['discount_amount']) : $input['discount_amount'],
+
+
+            'ref_no' => ! empty($input['order_point']) ? $input['order_point'] : null,
+            'job_no' => ! empty($input['job_no']) ? $input['job_no'] : null,
+            'job_ref' => ! empty($input['job_ref']) ? $input['job_ref'] : null,
+            'pur_ref_no' => ! empty($input['pur_ref']) ? $input['pur_ref'] : null,
+
+
+
+            
             'tax_amount' => $invoice_total['tax'],
             'final_total' => $final_total,
             'document' => isset($input['document']) ? $input['document'] : $transaction->document,

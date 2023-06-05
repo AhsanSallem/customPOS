@@ -210,7 +210,7 @@
 						<td colspan="4">
 							<div class="form-group">
 								{!! Form::label('additional_notes',__('purchase.additional_notes')) !!}
-								{!! Form::textarea('additional_notes', null, ['class' => 'form-control', 'rows' => 3]); !!}
+								{!! Form::text('additional_notes', null, ['class' => 'form-control', 'rows' => 3]); !!}
 							</div>
 						</td>
 					</tr>

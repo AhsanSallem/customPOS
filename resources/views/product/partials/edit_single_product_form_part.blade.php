@@ -20,7 +20,7 @@
           <th>@lang('product.default_purchase_price')</th>
           <th>@lang('product.profit_percent') @show_tooltip(__('tooltip.profit_percent'))</th>
           <th>@lang('product.default_selling_price')</th>
-          <th>@lang('lang_v1.product_image')</th>
+          <!-- <th>@lang('lang_v1.product_image')</th> -->
         </tr>
         @foreach($product_deatails->variations as $variation )
             @php
@@ -31,24 +31,51 @@
                     <td>
                         <input type="hidden" name="single_variation_id" value="{{$variation->id}}">
 
-                        <div class="col-sm-4">
-                          {!! Form::label('single_dpp_inc_tax2', trans('product.exc_of_tax') . ':*') !!}
+                     
 
-                          {!! Form::text('single_dpp_inc_tax2', @num_format($variation->default_purchase_price), ['class' => 'form-control input-sm dpp input_number', 'placeholder' => __('product.exc_of_tax'), 'required']); !!}
+
+
+                        <div class="col-sm-4">
+                        {!! Form::label('single_dpp_inc_tax2', trans('product.exc_of_tax') . ':*') !!}
+
+                        {!! Form::text('single_dpp_inc_tax2', @num_format($variation->default_purchase_price), ['class' => 'form-control input-sm dpp input_number', 'placeholder' => __('product.exc_of_tax'), 'required']); !!}
+                      </div>
+
+
+                        <div class="col-sm-4">
+                          {!! Form::label('list_discount', trans('product.list_discount') . ':*') !!}
+                          <input type="text" name="list_discount" value="{{$variation->discount}}" class='list_discount form-control'>
+
                         </div>
 
-                        <div class="col-sm-4">
-                            {!! Form::label('list_discount', trans('product.list_discount') . ':*') !!}
-                            
-                            {!! Form::text('list_discount', @num_format($variation->discount) , ['class' => 'form-control input-sm list_discount input_number', 'placeholder' => __('product.list_discount'), 'required']); !!}
-                        </div>
 
-                        <div class="col-sm-4">
-                          {!! Form::label('single_dpp', trans('product.inc_of_tax') . ':*') !!}
+                    
+
+
                         
-                          {!! Form::text('single_dpp', @num_format($variation->dpp_inc_tax), ['class' => 'form-control input-sm dpp_inc_tax input_number', 'placeholder' => __('product.inc_of_tax'), 'required']); !!}
-                        </div>
+
+
+                        <div class="col-sm-4">
+              {!! Form::label('single_dpp', trans('product.inc_of_tax') ) !!}
+            
+              {!! Form::text('single_dpp', @num_format($variation->dpp_inc_tax), ['class' => 'form-control input-sm dpp_inc_tax input_number', 'placeholder' => __('product.inc_of_tax'), 'required']); !!}
+            </div>
+
+
+
                     </td>
+
+
+
+
+
+
+
+
+
+
+
+
 
                     <td>
                         <br/>
@@ -56,8 +83,12 @@
                     </td>
 
 
+
                     
-          <td>
+
+          
+
+                    <td>
             
             <div class="col-sm-6">
                 <label><span class="dsp_label">@lang('product.unit_sell_ex')</span></label>
@@ -76,7 +107,20 @@
 
 
 
-                    <td>
+                    <!-- <td>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
                         @php 
                             $action = !empty($action) ? $action : '';
                         @endphp
@@ -88,13 +132,23 @@
                                 </div>
                             @endforeach
                         @endif
+
+
+
+
+
+
+
+
+
+
                         <div class="form-group">
                             {!! Form::label('variation_images', __('lang_v1.product_image') . ':') !!}
                             {!! Form::file('variation_images[]', ['class' => 'variation_images', 
                                 'accept' => 'image/*', 'multiple', 'required' => $is_image_required]); !!}
                             <small><p class="help-block">@lang('purchase.max_file_size', ['size' => (config('constants.document_size_limit') / 1000000)]) <br> @lang('lang_v1.aspect_ratio_should_be_1_1')</p></small>
                         </div>
-                    </td>
+                    </td> -->
                 </tr>
             @endif
         @endforeach
@@ -102,7 +156,9 @@
     </div>
 </div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script> -->
   <script>
     $(document).ready(function(){
       $(".list_discount").keyup(function(){

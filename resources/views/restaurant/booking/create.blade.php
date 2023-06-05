@@ -82,7 +82,7 @@
 					<div class="col-sm-12">
 						<div class="form-group">
 						{!! Form::label('booking_note', __( 'restaurant.customer_note' ) . ':') !!}
-						{!! Form::textarea('booking_note', null, ['class' => 'form-control','placeholder' => __( 'restaurant.customer_note' ), 'rows' => 3 ]); !!}
+						{!! Form::text('booking_note', null, ['class' => 'form-control','placeholder' => __( 'restaurant.customer_note' ), 'rows' => 3 ]); !!}
 						</div>
 					</div>
 					<div class="col-sm-12">

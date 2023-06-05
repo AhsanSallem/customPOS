@@ -85,7 +85,7 @@
               <div class="form-group">
                 {!! Form::label('required_date', __('purchase.required_date') ) !!}
                 
-                {!! Form::date('required_date', $purchase->required_date, ['class' => 'form-control', 'required']); !!}
+                {!! Form::date('required_date', $purchase->required_date, ['class' => 'form-control']); !!}
               </div>
             </div>
 
@@ -93,7 +93,7 @@
               <div class="form-group">
                 {!! Form::label('acknowledge_date', __('purchase.acknowledge_date') ) !!}
                 
-                {!! Form::date('acknowledge_date', $purchase->acknowledge_date, ['class' => 'form-control', 'required']); !!}
+                {!! Form::date('acknowledge_date', $purchase->acknowledge_date, ['class' => 'form-control']); !!}
               </div>
             </div>
 
@@ -101,7 +101,7 @@
               <div class="form-group">
                 {!! Form::label('duein_date', __('purchase.duein_date') ) !!}
                 
-                {!! Form::date('duein_date', $purchase->duein_date, ['class' => 'form-control', 'required']); !!}
+                {!! Form::date('duein_date', $purchase->duein_date, ['class' => 'form-control']); !!}
               </div>
             </div>
 
@@ -109,7 +109,7 @@
               <div class="form-group">
                 {!! Form::label('recieved_date', __('purchase.recieved_date') ) !!}
                 
-                {!! Form::date('recieved_date', $purchase->recieved_date, ['class' => 'form-control', 'required']); !!}
+                {!! Form::date('recieved_date', $purchase->recieved_date, ['class' => 'form-control']); !!}
               </div>
             </div>
 
@@ -117,7 +117,7 @@
               <div class="form-group">
                 {!! Form::label('invoice_date', __('purchase.invoice_date') ) !!}
                 
-                {!! Form::date('invoice_date', $purchase->invoice_date, ['class' => 'form-control', 'required']); !!}
+                {!! Form::date('invoice_date', $purchase->invoice_date, ['class' => 'form-control']); !!}
               </div>
             </div>
 
@@ -125,14 +125,14 @@
               <div class="form-group">
                 {!! Form::label('job_no', __('purchase.job_no') . '*') !!}
                 @show_tooltip(__('lang_v1.leave_empty_to_autogenerate'))
-                {!! Form::text('job_no', $purchase->job_no, ['class' => 'form-control', 'required']); !!}
+                {!! Form::text('job_no', $purchase->job_no, ['class' => 'form-control']); !!}
               </div>
             </div>
 
             <div class="@if(!empty($default_purchase_status)) col-sm-4 @else col-sm-3 @endif">
               <div class="form-group">
                 {!! Form::label('job_ref', __('purchase.job_ref') ) !!}
-                {!! Form::text('job_ref', $purchase->job_ref, ['class' => 'form-control', 'required']); !!}
+                {!! Form::text('job_ref', $purchase->job_ref, ['class' => 'form-control']); !!}
               </div>
             </div>
 
@@ -408,7 +408,7 @@
                     <td colspan="4">
                       <div class="form-group">
                         {!! Form::label('additional_notes',__('purchase.additional_notes')) !!}
-                        {!! Form::textarea('additional_notes', $purchase->additional_notes, ['class' => 'form-control', 'rows' => 3]); !!}
+                        {!! Form::text('additional_notes', $purchase->additional_notes, ['class' => 'form-control', 'rows' => 3]); !!}
                       </div>
                     </td>
                   </tr>

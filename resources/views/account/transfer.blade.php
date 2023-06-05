@@ -37,7 +37,7 @@
 
             <div class="form-group">
                 {!! Form::label('note', __( 'brand.note' )) !!}
-                {!! Form::textarea('note', null, ['class' => 'form-control', 'placeholder' => __( 'brand.note' ), 'rows' => 4]); !!}
+                {!! Form::text('note', null, ['class' => 'form-control', 'placeholder' => __( 'brand.note' ), 'rows' => 4]); !!}
             </div>
 
             <div class="form-group">

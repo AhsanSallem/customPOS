@@ -138,7 +138,7 @@
         <div class="col-sm-8">
           <div class="form-group">
             {!! Form::label('product_description', __('lang_v1.product_description') . ':') !!}
-              {!! Form::textarea('product_description', null, ['class' => 'form-control']); !!}
+              {!! Form::text('product_description', null, ['class' => 'form-control']); !!}
           </div>
         </div>
         <div class="clearfix"></div>

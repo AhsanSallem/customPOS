@@ -15,8 +15,8 @@
       </div>
 
       <div class="form-group">
-        {!! Form::label('description', __( 'lang_v1.description' ) . ':') !!}
-          {!! Form::textarea('description', $spg->description, ['class' => 'form-control','placeholder' => __( 'lang_v1.description' ), 'rows' => 3]); !!}
+        {!! Form::labeltextdescription', __( 'lang_v1.description' ) . ':') !!}
+          {!! Form::text('description', $spg->description, ['class' => 'form-control','placeholder' => __( 'lang_v1.description' ), 'rows' => 3]); !!}
       </div>
     </div>
 

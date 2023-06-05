@@ -51,11 +51,17 @@
 
     @component('components.widget', ['class' => 'box-primary', 'title' => __('purchase.all_purchases')])
         @can('purchase.create')
+
+
             @slot('tool')
-                <div class="box-tools">
+                <div class="box-tools mx-1">
+
                     <a class="btn-pill btn btn-block btn-primary" href="{{action([\App\Http\Controllers\PurchaseController::class, 'create'])}}">
                     <i class="fa fa-plus"></i> @lang('messages.add')</a>
                 </div>
+
+
+
             @endslot
         @endcan
         @include('purchase.partials.purchase_table')

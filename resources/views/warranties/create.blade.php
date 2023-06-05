@@ -16,7 +16,7 @@
 
       <div class="form-group">
         {!! Form::label('description', __( 'lang_v1.description' ) . ':') !!}
-          {!! Form::textarea('description', null, ['class' => 'form-control', 'placeholder' => __( 'lang_v1.description' ), 'rows' => 3 ]); !!}
+          {!! Form::text('description', null, ['class' => 'form-control', 'placeholder' => __( 'lang_v1.description' ), 'rows' => 3 ]); !!}
       </div>
       <strong>{!! Form::label('duration', __( 'lang_v1.duration' ) . ':') !!}*</strong>
       <div class="form-group">
